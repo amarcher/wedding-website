@@ -1,0 +1,13 @@
+.header {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+	line-height: 48px;
+    font-size: 36px;
+	width: 100%;
+	z-index: 1;
+    text-align: center;
+    background-color: white;
+    user-select: none;
+}
