@@ -6,7 +6,9 @@
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
     "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
     "babel-jest": "23.6.0",
+    "babel-loader": "^8.0.4",
     "babel-plugin-named-asset-import": "^0.2.3",
     "babel-preset-react-app": "^6.1.0",
     "bfj": "6.1.1",
@@ -16,7 +18,13 @@
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "express": "^4.16.4",
+    "express-favicon": "^2.0.1",
     "file-loader": "2.0.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.0",
@@ -27,6 +35,7 @@
     "jest-resolve": "23.6.0",
     "mini-css-extract-plugin": "0.4.3",
     "optimize-css-assets-webpack-plugin": "5.0.1",
+    "path": "^0.12.7",
     "pnp-webpack-plugin": "1.1.0",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
@@ -47,13 +56,7 @@
     "webpack": "4.19.1",
     "webpack-dev-server": "^3.1.14",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3",
-    "babel-eslint": "^9.0.0",
-    "babel-loader": "^8.0.4",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "workbox-webpack-plugin": "3.6.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -66,8 +69,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
