@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
-// import { XMAS_IN_RI } from './photos/index';
-// import BAY_BRIDGE from './photos/bay_bridge.jpeg';
-// import BAKER_BEACH_CLOSEUP from './photos/baker_beach_closeup.jpg';
-import BAKER_BEACH from './photos/baker_beach.jpg';
+import HIKE from './photos/hike.jpeg';
 
 const layers = [{
-  image: BAKER_BEACH,
+  image: HIKE,
   expanded: true,
-  amount: 0.2,
+  amount: 0.4,
   slowerScrollRate: false,
 }];
 
@@ -18,7 +15,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <ParallaxBanner layers={layers} style={{ height: '100vw' }}>
+        <ParallaxBanner layers={layers} style={{ height: '30vw' }}>
           <div />
         </ParallaxBanner>
       </div>
