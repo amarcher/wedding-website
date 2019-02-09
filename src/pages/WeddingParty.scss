@@ -1,0 +1,15 @@
+@import '../_colors.scss';
+
+.wedding-party {
+    padding: 0 30px; 
+    margin-top: -120px;
+}
+
+.wedding-party__bridesmaids,
+.wedding-party__groomsmen {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}

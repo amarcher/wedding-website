@@ -1,4 +1,4 @@
-@import './_colors.scss';
+@import '../_colors.scss';
 
 .nav {
   position: -webkit-sticky;
@@ -17,7 +17,6 @@
 }
 
 .nav__list-item {
-  display: inline;
   list-style-type: none;
 
   & *:not(.active) {
@@ -48,6 +47,8 @@ ul {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
+  display: flex;
+  align-items: space-around;
 }
 
 button {

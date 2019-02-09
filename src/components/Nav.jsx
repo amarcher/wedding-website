@@ -10,10 +10,10 @@ class Nav extends Component {
       <div className="nav">
         <nav className="nav__content">
           <ul>
-            <li className="nav__list-item"><NavLink to="/" exact>Home</NavLink></li>
-            <li className="nav__list-item"><NavLink to="/about">Wedding</NavLink></li>
-            <li className="nav__list-item"><NavLink to="/topics">Location</NavLink></li>
-            <li className="nav__list-item"><NavLink to="/hotels">Hotels</NavLink></li>
+            <li className="nav__list-item"><NavLink to="/" exact>Our Story</NavLink></li>
+            <li className="nav__list-item"><NavLink to="/event-details">Event Details</NavLink></li>
+            <li className="nav__list-item"><NavLink to="/wedding-party">Wedding Party</NavLink></li>
+            <li className="nav__list-item"><NavLink to="/accommodations">Accommodations</NavLink></li>
           </ul>
         </nav>
         <div className="nav__spacer" />

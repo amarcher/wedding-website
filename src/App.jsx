@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import Header from './Header';
-import Nav from './Nav';
-import Home from './Home';
-import Hotels from './Hotels';
+import Header from './components/Header';
+import Nav from './components/Nav';
+import OurStory from './pages/OurStory';
+import EventDetails from './pages/EventDetails';
+import Accommodations from './pages/Accommodations';
+import WeddingParty from './pages/WeddingParty';
 
 import './App.css';
 
@@ -18,10 +20,10 @@ class App extends Component {
             <Header />
             <Nav />
             <main>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={Home} />
-              <Route path="/topics" component={Home} />
-              <Route path="/hotels" component={Hotels} />
+              <Route exact path="/" component={OurStory} />
+              <Route path="/event-details" component={EventDetails} />
+              <Route path="/wedding-party" component={WeddingParty} />
+              <Route path="/accommodations" component={Accommodations} />
             </main>
           </ParallaxProvider>
         </div>

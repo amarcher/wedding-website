@@ -1,0 +1,44 @@
+@import '../_colors.scss';
+
+.profile-card {
+    height: 500px;
+    width: 280px;
+    background-color: #FFF;
+    user-select: none;
+    box-shadow: 4px 4px 8px #969696;
+    margin: 16px;
+}
+
+.profile-card__image {
+    height: 240px;
+    width: 280px;
+    background-color: $darkBlue;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-card__name_and_distance {
+    border-bottom: 1px solid #969696;
+}
+
+.profile-card__content {
+    padding: 0 10px;
+}
+
+.profile-card__name,
+.profile-card__prompt {
+    font-weight: bold;
+}
+
+.profile-card__distance,
+.profile-card__relation,
+.profile-card__then,
+.profile-card__now {
+    font-size: 15px;
+}
+
+.profile-card__location_pin {
+    height: 14px;
+    margin-right: 3px;
+}
+
