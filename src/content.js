@@ -44,7 +44,7 @@ const julie = {
 
 const joy = {
   name: 'Joy Xu',
-  distance: '2925 miles away',
+  distance: '2924 miles away',
   relation: 'College roommate, and the one who’s not afraid to say what we’re all thinking',
   then: 'Dancing to Usher songs at summer camp and eating nutella straight from the jar',
   now: 'Director at New Mountain Capital',

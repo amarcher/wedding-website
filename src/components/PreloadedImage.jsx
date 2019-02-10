@@ -9,11 +9,15 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   style: PropTypes.object,
   className: PropTypes.string,
+  imageClassName: PropTypes.string,
+  useImg: PropTypes.bool,
 };
 
 const defaultProps = {
   className: '',
+  imageClassName: '',
   style: {},
+  useImg: false,
 };
 
 class PreloadedImage extends Component {
@@ -41,7 +45,7 @@ class PreloadedImage extends Component {
 
     this.setState(() => ({
       loaded: true,
-      src: `url(${src})`,
+      src,
     }));
 
     this.preloader.onload = null;
@@ -56,15 +60,38 @@ class PreloadedImage extends Component {
   }
 
   render() {
-    const { className, style } = this.props;
+    const {
+      className,
+      imageClassName,
+      style,
+      useImg,
+    } = this.props;
     const { src, loaded } = this.state;
-
-    const imageClass = classNames('preloaded-image', {
-      'preloaded-image__preloading': !loaded,
-    });
 
     const containerClass = classNames('preloaded-image__container', {
       [className]: !!className,
+    });
+
+    if (useImg) {
+      const imgClass = classNames('preloaded-image__img', {
+        'preloaded-image__preloading': !loaded,
+        [imageClassName]: imageClassName,
+      });
+
+      return (
+        <div className={containerClass} style={style}>
+          <img
+            className={imgClass}
+            alt={src}
+            src={src}
+          />
+        </div>
+      );
+    }
+
+    const imageClass = classNames('preloaded-image', {
+      'preloaded-image__preloading': !loaded,
+      [imageClassName]: imageClassName,
     });
 
     return (
@@ -75,7 +102,7 @@ class PreloadedImage extends Component {
         <div
           className={imageClass}
           style={{
-            backgroundImage: src,
+            backgroundImage: `url(${src})`,
           }}
         />
       </div>
