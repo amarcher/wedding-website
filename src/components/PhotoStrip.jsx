@@ -22,15 +22,17 @@ function PhotoStrip({ images, className }) {
 
   return (
     <div className={photoStripClassName}>
-      <div className="photo-strip__image_container">
-        {images.map(image => (
-          <PreloadedImage
-            src={image}
-            className="photo-strip__image"
-            imageClassName="photo-strip__inner_image"
-            useImg
-          />
-        ))}
+      <div className="photo-strip__container">
+        <div className="photo-strip__image_container">
+          {images.map(image => (
+            <PreloadedImage
+              src={image}
+              className="photo-strip__image"
+              imageClassName="photo-strip__inner_image"
+              useImg
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

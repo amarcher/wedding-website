@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import PhotoStrip from '../components/PhotoStrip';
+import './OurStory.scss';
 
 import LazyBear from '../photos/LazyBear.jpg';
 import JensensWedding from '../photos/JensensWedding.jpg';
@@ -34,22 +35,37 @@ const photoStripImages = [
   Hawaii,
   Seattle,
   MonkeyForest,
+];
+
+const photoStripImages2 = [
   ClintsWedding,
   RhodeIsland,
   MontanaFishing,
   CookingInRhodeIsland,
+];
+
+const photoStripImages3 = [
   HikingMarin,
   Rooftop,
   SanDiegoBeachHike,
   SoCalSaintsGame,
 ];
 
+
 /* eslint-disable-next-line react/prefer-stateless-function */
 class OurStory extends Component {
   render() {
     return (
       <div className="our-story">
-        <PhotoStrip images={photoStripImages} />
+        <div style={{ transform: 'rotate(-5deg)', zIndex: -10, marginTop: 24 }}>
+          <PhotoStrip images={photoStripImages2} />
+        </div>
+        <div style={{ transform: 'rotate(3deg)', zIndex: 0, marginTop: 24 }}>
+          <PhotoStrip images={photoStripImages} />
+        </div>
+        <div style={{ transform: 'rotate(-2deg)', zIndex: 10, marginTop: 24 }}>
+          <PhotoStrip images={photoStripImages3} />
+        </div>
       </div>
     );
   }
