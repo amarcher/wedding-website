@@ -82,7 +82,7 @@ class Carousel extends Component {
         <button type="button" className="carousel__arrow_left" onClick={this.slideBackward} disabled={!activeIndex}>
           <Chevron direction="left" />
         </button>
-        <button type="button" className="carousel__arrow_left" onClick={this.slideForward} disabled={activeIndex === images.length - 1}>
+        <button type="button" className="carousel__arrow_right" onClick={this.slideForward} disabled={activeIndex === images.length - 1}>
           <Chevron direction="right" />
         </button>
       </div>

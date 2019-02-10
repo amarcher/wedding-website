@@ -8,9 +8,7 @@ const propTypes = {
 function Chevron({ direction }) {
   return (
     <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
+      viewBox="0 0 24 24"
       transform={direction === 'left' ? 'scale(-1 1)' : ''}
       opacity={0.9}
       fill="#f7f7f7"
