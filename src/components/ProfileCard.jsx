@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import LocationPin from './LocationPin';
+import PreloadedImage from './PreloadedImage';
 import './ProfileCard.scss';
 
 const propTypes = {
@@ -23,13 +24,9 @@ function ProfileCard({
   title,
   relation,
 }) {
-  const style = {
-    backgroundImage: `url('${img}')`,
-  };
-
   return (
     <div className="profile-card">
-      <div className="profile-card__image" style={style} />
+      <PreloadedImage className="profile-card__image" src={img} />
       <div className="profile-card__content">
         <div className="profile-card__name_and_distance">
           <p>
