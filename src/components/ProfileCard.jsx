@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import LocationPin from './LocationPin';
-import PreloadedImage from './PreloadedImage';
+import Carousel from './Carousel';
 import './ProfileCard.scss';
 
 const propTypes = {
   distance: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   relation: PropTypes.string.isRequired,
@@ -17,7 +17,7 @@ const propTypes = {
 
 function ProfileCard({
   distance,
-  img,
+  images,
   name,
   now,
   then,
@@ -26,7 +26,7 @@ function ProfileCard({
 }) {
   return (
     <div className="profile-card">
-      <PreloadedImage className="profile-card__image" src={img} />
+      <Carousel className="profile-card__image" images={images} />
       <div className="profile-card__content">
         <div className="profile-card__name_and_distance">
           <p>

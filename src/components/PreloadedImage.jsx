@@ -6,14 +6,16 @@ import './PreloadedImage.scss';
 
 const propTypes = {
   src: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
   className: PropTypes.string,
 };
 
 const defaultProps = {
   className: '',
+  style: {},
 };
 
-/* eslint-disable-next-line react/prefer-stateless-function */
 class PreloadedImage extends Component {
   constructor(props) {
     super(props);
@@ -54,28 +56,25 @@ class PreloadedImage extends Component {
   }
 
   render() {
-    const { className } = this.props;
+    const { className, style } = this.props;
     const { src, loaded } = this.state;
 
     const imageClass = classNames('preloaded-image', {
       'preloaded-image__preloading': !loaded,
     });
 
+    const containerClass = classNames('preloaded-image__container', {
+      [className]: !!className,
+    });
+
     return (
       <div
-        className={className}
-        style={{
-          position: 'relative',
-        }}
+        className={containerClass}
+        style={style}
       >
         <div
           className={imageClass}
           style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
             backgroundImage: src,
           }}
         />

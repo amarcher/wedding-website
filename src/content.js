@@ -1,8 +1,13 @@
 import Julie from './photos/Julie.png';
+import Julie2 from './photos/Julie2.jpg';
 import Joy from './photos/Joy3.jpg';
+import Joy2 from './photos/Joy2.jpg';
 import Minna from './photos/Minna1.jpg';
+import Minna2 from './photos/Minna2.jpg';
 import Kerry from './photos/Kerry.jpg';
+import Kerry2 from './photos/Kerry2.jpg';
 import Mai from './photos/Mai1.jpg';
+import Mai2 from './photos/Mai2.jpg';
 import Allen from './photos/Allen.png';
 import Russell from './photos/Russell.jpeg';
 import Michael from './photos/Michael.jpeg';
@@ -15,7 +20,7 @@ const kerry = {
   relation: 'Sister, and the one who inspires us to cook',
   then: 'Assistant to the principal of AK Daycare™, a summer school created for our brothers Derick & Jason',
   now: 'PhD candidate at Columbia Business School',
-  img: Kerry,
+  images: [Kerry, Kerry2],
   title: 'Maid of Honor',
 };
 
@@ -25,7 +30,7 @@ const mai = {
   relation: 'College roommate, and the one who handles all medical questions',
   then: 'Eating 50 chicken nuggets after Penn Spring Fling 2011 and then proceeding to cook omelets',
   now: 'Resident Ophthalmologist at U of Washington',
-  img: Mai,
+  images: [Mai, Mai2],
 };
 
 const julie = {
@@ -34,7 +39,7 @@ const julie = {
   relation: 'College roommate, and the one who made me like dogs',
   then: 'Spending almost all Thanksgiving weekends together and sleeping in until mid-afternoon',
   now: 'COO at Stae',
-  img: Julie,
+  images: [Julie, Julie2],
 };
 
 const joy = {
@@ -43,7 +48,7 @@ const joy = {
   relation: 'College roommate, and the one who’s not afraid to say what we’re all thinking',
   then: 'Dancing to Usher songs at summer camp and eating nutella straight from the jar',
   now: 'Director at New Mountain Capital',
-  img: Joy,
+  images: [Joy, Joy2],
 };
 
 const minna = {
@@ -52,7 +57,7 @@ const minna = {
   relation: 'Childhood friend, and the one who’s never lived more than 5 miles away (except for those 2 years at Duke)',
   then: 'Permanent wedding +1 and honeymoon destination travel companion',
   now: 'Senior Manager at Genentech',
-  img: Minna,
+  images: [Minna, Minna2],
 };
 
 const allen = {
@@ -61,7 +66,7 @@ const allen = {
   relation: 'Former coworker and the one who’s most likely got an opinionated story to tell about any subject',
   then: '',
   now: '',
-  img: Allen,
+  images: [Allen],
 };
 
 const russell = {
@@ -70,7 +75,7 @@ const russell = {
   relation: 'SF Magic best-bud and the one who’s most likely to be "feelin’ it"',
   then: '',
   now: '',
-  img: Russell,
+  images: [Russell],
 };
 
 const michael = {
@@ -79,7 +84,7 @@ const michael = {
   relation: 'College friend and the one who’s most likely not to pay extra for guacamole at Chipotle',
   then: '',
   now: '',
-  img: Michael,
+  images: [Michael],
 };
 
 const dave = {
@@ -88,7 +93,7 @@ const dave = {
   relation: 'College friend and the one who’s most likely down for Vegas on short notice',
   then: '',
   now: '',
-  img: Dave,
+  images: [Dave],
 };
 
 const al = {
@@ -97,7 +102,7 @@ const al = {
   relation: 'College roommate and the one who almost certainly needs to stay-in and study tonight',
   then: '',
   now: '',
-  img: Al,
+  images: [Al],
 };
 
 export const bridesmaids = [
