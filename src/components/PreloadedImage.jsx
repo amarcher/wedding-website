@@ -26,7 +26,6 @@ class PreloadedImage extends Component {
 
     this.state = {
       loaded: false,
-      src: undefined,
     };
 
     this.setLoaded = this.setLoaded.bind(this);
@@ -41,11 +40,8 @@ class PreloadedImage extends Component {
   }
 
   setLoaded() {
-    const { src } = this.props;
-
     this.setState(() => ({
       loaded: true,
-      src,
     }));
 
     this.preloader.onload = null;
@@ -65,8 +61,9 @@ class PreloadedImage extends Component {
       imageClassName,
       style,
       useImg,
+      src,
     } = this.props;
-    const { src, loaded } = this.state;
+    const { loaded } = this.state;
 
     const containerClass = classNames('preloaded-image__container', {
       [className]: !!className,

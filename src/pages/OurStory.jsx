@@ -57,13 +57,13 @@ class OurStory extends Component {
   render() {
     return (
       <div className="our-story">
-        <div style={{ transform: 'rotate(-5deg)', zIndex: -10, marginTop: 24 }}>
+        <div className="our-story__film">
           <PhotoStrip images={photoStripImages2} />
         </div>
-        <div style={{ transform: 'rotate(3deg)', zIndex: 0, marginTop: 24 }}>
+        <div className="our-story__film">
           <PhotoStrip images={photoStripImages} />
         </div>
-        <div style={{ transform: 'rotate(-2deg)', zIndex: 10, marginTop: 24 }}>
+        <div className="our-story__film">
           <PhotoStrip images={photoStripImages3} />
         </div>
       </div>
