@@ -1,4 +1,5 @@
 @import '../_colors.scss';
+@import '../_breakpoints.scss';
 
 .nav {
   position: -webkit-sticky;
@@ -18,6 +19,11 @@
 
 .nav__list-item {
   list-style-type: none;
+  white-space: nowrap;
+
+  @include breakpoint(mobile) {
+    font-size: 13px;
+  }
 
   & *:not(.active) {
     color: $darkBlue;
@@ -30,6 +36,10 @@
 
 .nav__list-item:not(:last-child) {
   padding-right: 20px;
+
+  @include breakpoint(mobile) {
+    padding-right: 12px;
+  }
 }
 
 .nav__spacer {
@@ -49,6 +59,7 @@ ul {
   margin-block-end: 0;
   display: flex;
   align-items: space-around;
+  flex-wrap: nowrap;
 }
 
 button {
