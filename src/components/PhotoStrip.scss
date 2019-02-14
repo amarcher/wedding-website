@@ -3,6 +3,12 @@
 
 .photo-strip {
     overflow: hidden;
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.photo-strip__hidden {
+    opacity: 0;
 }
 
 .photo-strip__container {

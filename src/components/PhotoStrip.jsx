@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -15,27 +15,56 @@ const defaultProps = {
   className: '',
 };
 
-function PhotoStrip({ images, className }) {
-  const photoStripClassName = classNames('photo-strip', {
-    [className]: !!className,
-  });
+class PhotoStrip extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className={photoStripClassName}>
-      <div className="photo-strip__container">
-        <div className="photo-strip__image_container">
-          {images.map(image => (
-            <PreloadedImage
-              src={image}
-              className="photo-strip__image"
-              imageClassName="photo-strip__inner_image"
-              useImg
-            />
-          ))}
+    this.state = {
+      isReady: false,
+    };
+
+    this.readyImageSrcs = new Set();
+    this.onReady = this.onReady.bind(this);
+  }
+
+  onReady(src) {
+    const { images } = this.props;
+
+    this.readyImageSrcs.add(src);
+
+    if (this.readyImageSrcs.size === images.length) {
+      this.setState(() => ({ isReady: true }));
+    }
+  }
+
+  render() {
+    const { images, className } = this.props;
+    const { isReady } = this.state;
+
+    const photoStripClassName = classNames('photo-strip', {
+      [className]: !!className,
+      'photo-strip__hidden': !isReady,
+    });
+
+    return (
+      <div className={photoStripClassName}>
+        <div className="photo-strip__container">
+          <div className="photo-strip__image_container">
+            {images.map(image => (
+              <PreloadedImage
+                key={image}
+                src={image}
+                className="photo-strip__image"
+                imageClassName="photo-strip__inner_image"
+                onReady={this.onReady}
+                useImg
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 PhotoStrip.propTypes = propTypes;

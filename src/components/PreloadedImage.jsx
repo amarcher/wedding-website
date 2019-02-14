@@ -11,6 +11,7 @@ const propTypes = {
   className: PropTypes.string,
   imageClassName: PropTypes.string,
   useImg: PropTypes.bool,
+  onReady: PropTypes.func,
 };
 
 const defaultProps = {
@@ -18,6 +19,7 @@ const defaultProps = {
   imageClassName: '',
   style: {},
   useImg: false,
+  onReady: () => {},
 };
 
 class PreloadedImage extends Component {
@@ -40,9 +42,11 @@ class PreloadedImage extends Component {
   }
 
   setLoaded() {
+    const { onReady, src } = this.props;
+
     this.setState(() => ({
       loaded: true,
-    }));
+    }), () => onReady(src));
 
     this.preloader.onload = null;
   }

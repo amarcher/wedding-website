@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  direction: PropTypes.oneOf('left', 'right').isRequired,
+  direction: PropTypes.oneOf(['left', 'right']).isRequired,
 };
 
 function Chevron({ direction }) {
