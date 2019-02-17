@@ -24,4 +24,9 @@
         transform: rotate(-2deg);
         z-index: 3;
     }
+
+    &:nth-child(4) {
+        transform: rotate(1deg);
+        z-index: 4;
+    }
 }

@@ -11,16 +11,19 @@ import Mai2 from './photos/Mai2.jpg';
 import Allen from './photos/Allen.png';
 import Allen2 from './photos/Allen2.jpg';
 import Allen3 from './photos/Allen3.jpg';
+import Allen4 from './photos/Allen4.jpg';
 import Russell from './photos/Russell.jpeg';
 import Russell2 from './photos/Russell2.jpg';
 import Russell3 from './photos/Russell3.png';
 import Michael from './photos/Michael.jpeg';
 import Michael2 from './photos/Michael2.jpg';
+import Michael3 from './photos/Michael3.jpg';
 import Dave from './photos/Dave.jpeg';
 import Dave2 from './photos/Dave2.jpg';
 import Dave3 from './photos/Dave3.jpg';
 import Al from './photos/Al.jpg';
 import Al2 from './photos/Al2.jpeg';
+import Al3 from './photos/Al3.jpg';
 
 const kerry = {
   name: 'Kerry Yang',
@@ -73,8 +76,8 @@ const allen = {
   distance: '816 miles away',
   relation: 'Former coworker and the one who’s most likely got an opinionated story to tell about any subject',
   then: '',
-  now: '',
-  images: [Allen, Allen2, Allen3],
+  now: 'iOS Developer, AIM Consulting Group',
+  images: [Allen, Allen2, Allen3, Allen4],
 };
 
 const russell = {
@@ -82,7 +85,7 @@ const russell = {
   distance: '572 miles away',
   relation: 'SF Magic best-bud and the one who’s most likely to be "feelin’ it"',
   then: '',
-  now: '',
+  now: 'Technical Project Lead, Intellum',
   images: [Russell, Russell2, Russell3],
 };
 
@@ -91,8 +94,8 @@ const michael = {
   distance: '19 miles away',
   relation: 'College friend and the one who’s most likely not to pay extra for guacamole at Chipotle',
   then: '',
-  now: '',
-  images: [Michael, Michael2],
+  now: 'Analyst at Mercator Fund, Sycale Advisors',
+  images: [Michael, Michael2, Michael3],
 };
 
 const dave = {
@@ -100,7 +103,7 @@ const dave = {
   distance: '3 miles away',
   relation: 'College friend and the one who’s most likely down for Vegas on short notice',
   then: '',
-  now: '',
+  now: 'Director of Product Engineering, BuildZoom',
   images: [Dave, Dave2, Dave3],
 };
 
@@ -109,8 +112,8 @@ const al = {
   distance: '1774 miles away',
   relation: 'College roommate and the one who almost certainly needs to stay-in and study tonight',
   then: '',
-  now: '',
-  images: [Al, Al2],
+  now: 'Gastroenterologist, Texas Digestive Disease Consultants',
+  images: [Al, Al2, Al3],
 };
 
 export const bridesmaids = [

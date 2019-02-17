@@ -8,6 +8,7 @@ import JensensWedding from '../photos/JensensWedding.jpg';
 import Hawaii from '../photos/Hawaii.jpg';
 import Seattle from '../photos/Seattle.jpg';
 import MonkeyForest from '../photos/MonkeyForest.jpg';
+import MonkeyForest2 from '../photos/MonkeyForest2.jpg';
 import ClintsWedding from '../photos/ClintsWedding.jpg';
 import RhodeIsland from '../photos/RhodeIsland.jpg';
 import MontanaFishing from '../photos/MontanaFishing.jpg';
@@ -16,18 +17,11 @@ import HikingMarin from '../photos/HikingMarin.jpg';
 import Rooftop from '../photos/Rooftop.jpg';
 import SanDiegoBeachHike from '../photos/SanDiegoBeachHike.jpg';
 import SoCalSaintsGame from '../photos/SoCalSaintsGame.jpg';
+import AndrewsHoney from '../photos/AndrewsHoney.jpg';
+import SlackHolidayParty from '../photos/SlackHolidayParty.jpg';
+import VancouverPinkAlley from '../photos/VancouverPinkAlley.jpg';
+import SaintsGame from '../photos/SaintsGame.jpg';
 
-// import { XMAS_IN_RI } from '../photos/index';
-// import BAY_BRIDGE from '../photos/bay_bridge.jpeg';
-// import BAKER_BEACH_CLOSEUP from '../photos/baker_beach_closeup.jpg';
-// import BAKER_BEACH from '../photos/baker_beach.jpg';
-
-// const layers = [{
-//   image: BAKER_BEACH,
-//   expanded: true,
-//   amount: 0.2,
-//   slowerScrollRate: false,
-// }];
 
 const photoStripImages = [
   LazyBear,
@@ -51,6 +45,14 @@ const photoStripImages3 = [
   SoCalSaintsGame,
 ];
 
+const photoStripImages4 = [
+  MonkeyForest2,
+  AndrewsHoney,
+  SlackHolidayParty,
+  SaintsGame,
+  VancouverPinkAlley,
+];
+
 
 /* eslint-disable-next-line react/prefer-stateless-function */
 class OurStory extends Component {
@@ -65,6 +67,9 @@ class OurStory extends Component {
         </div>
         <div className="our-story__film">
           <PhotoStrip images={photoStripImages3} />
+        </div>
+        <div className="our-story__film">
+          <PhotoStrip images={photoStripImages4} />
         </div>
       </div>
     );
