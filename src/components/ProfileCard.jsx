@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import LocationPin from './LocationPin';
 import Carousel from './Carousel';
+
 import './ProfileCard.scss';
 
 const propTypes = {

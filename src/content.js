@@ -9,10 +9,18 @@ import Kerry2 from './photos/Kerry2.jpg';
 import Mai from './photos/Mai1.jpg';
 import Mai2 from './photos/Mai2.jpg';
 import Allen from './photos/Allen.png';
+import Allen2 from './photos/Allen2.jpg';
+import Allen3 from './photos/Allen3.jpg';
 import Russell from './photos/Russell.jpeg';
+import Russell2 from './photos/Russell2.jpg';
+import Russell3 from './photos/Russell3.png';
 import Michael from './photos/Michael.jpeg';
+import Michael2 from './photos/Michael2.jpg';
 import Dave from './photos/Dave.jpeg';
+import Dave2 from './photos/Dave2.jpg';
+import Dave3 from './photos/Dave3.jpg';
 import Al from './photos/Al.jpg';
+import Al2 from './photos/Al2.jpeg';
 
 const kerry = {
   name: 'Kerry Yang',
@@ -66,7 +74,7 @@ const allen = {
   relation: 'Former coworker and the one who’s most likely got an opinionated story to tell about any subject',
   then: '',
   now: '',
-  images: [Allen],
+  images: [Allen, Allen2, Allen3],
 };
 
 const russell = {
@@ -75,7 +83,7 @@ const russell = {
   relation: 'SF Magic best-bud and the one who’s most likely to be "feelin’ it"',
   then: '',
   now: '',
-  images: [Russell],
+  images: [Russell, Russell2, Russell3],
 };
 
 const michael = {
@@ -84,7 +92,7 @@ const michael = {
   relation: 'College friend and the one who’s most likely not to pay extra for guacamole at Chipotle',
   then: '',
   now: '',
-  images: [Michael],
+  images: [Michael, Michael2],
 };
 
 const dave = {
@@ -93,7 +101,7 @@ const dave = {
   relation: 'College friend and the one who’s most likely down for Vegas on short notice',
   then: '',
   now: '',
-  images: [Dave],
+  images: [Dave, Dave2, Dave3],
 };
 
 const al = {
@@ -102,7 +110,7 @@ const al = {
   relation: 'College roommate and the one who almost certainly needs to stay-in and study tonight',
   then: '',
   now: '',
-  images: [Al],
+  images: [Al, Al2],
 };
 
 export const bridesmaids = [
