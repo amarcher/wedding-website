@@ -1,0 +1,21 @@
+@import '../_colors.scss';
+@import '../_breakpoints.scss';
+
+.story {
+	box-sizing: border-box;
+    max-width: 800px;
+    border: 16px solid transparent;
+
+    @include breakpoint(phablet) {
+    	width: 582px;
+    }
+
+	@include breakpoint(mobile) {
+		width: 320px;
+	}
+}
+
+.story__paragraph {
+	font-family: 'Handlee', cursive;
+	font-size: 24px;
+}

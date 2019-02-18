@@ -76,7 +76,7 @@ class PreloadedImage extends Component {
     if (useImg) {
       const imgClass = classNames('preloaded-image__img', {
         'preloaded-image__preloading': !loaded,
-        [imageClassName]: imageClassName,
+        [imageClassName]: !!imageClassName,
       });
 
       return (

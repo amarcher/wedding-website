@@ -1,0 +1,36 @@
+@import '../_colors.scss';
+@import '../_breakpoints.scss';
+
+.google-map {
+    overflow: hidden;
+    width: 800px;
+    height: 410px;
+
+    @include breakpoint(phablet) {
+	    width: 582px;
+		height: 310px;
+	}
+
+    @include breakpoint(mobile) {
+		width: 320px;
+		height: 190px;
+	}
+}
+
+.google-map__iframe {
+    position: relative;
+    width: 800px;
+    height: 480px;
+    top: -50px;
+    border: none;
+
+    @include breakpoint(phablet) {
+    	width: 640px;
+		height: 360px;
+	}
+
+    @include breakpoint(mobile) {
+		width: 320px;
+		height: 240px;
+	}
+}

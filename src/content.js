@@ -132,6 +132,15 @@ export const groomsmen = [
   al,
 ];
 
+export const ourStory = [
+  'In 2006, Andy drives from Ithaca, NY to San Francisco, CA.',
+  'In 2016, Alicia decides to temporarily part ways with her East coast life, relocating to San Francisco “for six months to a year, tops.“',
+  'Andy matches Alicia on a dating website and invites her out for a drink.',
+  'Andy shows up ten minutes late and introduces himself as “Andrew“ with a handshake.',
+  'He is visibly relieved that she looks every bit as cute in person as he hoped.',
+  'Alicia decides to stay.',
+];
+
 export default {
   bridesmaids,
   groomsmen,

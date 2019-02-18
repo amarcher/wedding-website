@@ -3,8 +3,27 @@
 .our-story {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin-top: -80px;
+}
+
+.our-story__story {
+    margin: 80px auto;
+    display: inline-block;
+    overflow: hidden;
+    box-shadow: 4px 4px 16px 8px #969696;
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-delay: 200ms;
+}
+
+.our-story__story__preloading {
+    opacity: 0;
+}
+
+.our-story__film_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .our-story__film {

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
 import PhotoStrip from '../components/PhotoStrip';
-import './OurStory.scss';
+import Story from '../components/Story';
+import GoogleMap from '../components/GoogleMap';
 
 import LazyBear from '../photos/LazyBear.jpg';
 import JensensWedding from '../photos/JensensWedding.jpg';
@@ -21,6 +23,9 @@ import AndrewsHoney from '../photos/AndrewsHoney.jpg';
 import SlackHolidayParty from '../photos/SlackHolidayParty.jpg';
 import VancouverPinkAlley from '../photos/VancouverPinkAlley.jpg';
 import SaintsGame from '../photos/SaintsGame.jpg';
+import { ourStory as paragraphs } from '../content';
+
+import './OurStory.scss';
 
 
 const photoStripImages = [
@@ -54,22 +59,53 @@ const photoStripImages4 = [
 ];
 
 
-/* eslint-disable-next-line react/prefer-stateless-function */
 class OurStory extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoaded: false,
+    };
+
+    this.onReady = this.onReady.bind(this);
+  }
+
+  onReady() {
+    this.setState(() => ({
+      isLoaded: true,
+    }));
+  }
+
   render() {
+    const { isLoaded } = this.state;
+
+    const storyClassName = classNames('our-story__story', {
+      'our-story__story__preloading': !isLoaded,
+    });
+
     return (
       <div className="our-story">
-        <div className="our-story__film">
-          <PhotoStrip images={photoStripImages2} />
-        </div>
-        <div className="our-story__film">
-          <PhotoStrip images={photoStripImages} />
-        </div>
-        <div className="our-story__film">
-          <PhotoStrip images={photoStripImages3} />
-        </div>
-        <div className="our-story__film">
-          <PhotoStrip images={photoStripImages4} />
+        <div className="our-story__film_section">
+          <div className="our-story__film">
+            <PhotoStrip images={photoStripImages2} />
+          </div>
+          <div className="our-story__film">
+            <PhotoStrip images={photoStripImages} />
+          </div>
+          <div className={storyClassName}>
+            <GoogleMap
+              title="Our Story"
+              url="https://www.google.com/maps/d/embed?mid=1BTNXvivqUUbnNUysytKguoUjgIYhbCU0"
+              onReady={this.onReady}
+            />
+            <Story paragraphs={paragraphs} />
+          </div>
+          <div className="our-story__film">
+            <PhotoStrip images={photoStripImages3} />
+          </div>
+          <div className="our-story__film">
+            <PhotoStrip images={photoStripImages4} />
+          </div>
         </div>
       </div>
     );

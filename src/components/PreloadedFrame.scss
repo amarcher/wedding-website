@@ -1,0 +1,14 @@
+@import '../_colors.scss';
+
+.preloaded-frame {
+    background-color: $darkBlue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.preloaded-image__preloading {
+    opacity: 0;
+}
