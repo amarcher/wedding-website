@@ -29,7 +29,7 @@ const kerry = {
   name: 'Kerry Yang',
   distance: '3093 miles away',
   relation: 'Sister, and the one who inspires us to cook',
-  then: 'Assistant to the principal of AK Daycare™, a summer school created for our brothers Derick & Jason',
+  then: 'Assistant to the principal of AK Daycare™, a summer school we created for our brothers Derick & Jason',
   now: 'PhD candidate at Columbia Business School',
   images: [Kerry, Kerry2],
   title: 'Maid of Honor',
@@ -134,10 +134,10 @@ export const groomsmen = [
 
 export const ourStory = [
   'In 2006, Andy drives from Ithaca, NY to San Francisco, CA.',
-  'In 2016, Alicia decides to temporarily part ways with her East coast life, relocating to San Francisco “for six months to a year, tops.“',
+  'In 2016, Alicia decides to temporarily part ways with her East Coast life, relocating to San Francisco “for six months to a year, tops.“',
   'Andy matches Alicia on a dating website and invites her out for a drink.',
-  'Andy shows up ten minutes late and introduces himself as “Andrew“ with a handshake.',
-  'He is visibly relieved that she looks every bit as cute in person as he hoped.',
+  'They find out they have many things in common: they were both born in Louisiana, both have 1 sister and 2 brothers, and both are science PhD drop-outs.',
+  'Andy starts clearing all weekends to hang out with her.',
   'Alicia decides to stay.',
 ];
 
