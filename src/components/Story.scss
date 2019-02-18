@@ -16,6 +16,14 @@
 }
 
 .story__paragraph {
-	font-family: 'Handlee', cursive;
+	font-family: 'Laila', sans-serif;
 	font-size: 24px;
+
+	@include breakpoint(phablet) {
+    	font-size: 18px;
+    }
+
+    @include breakpoint(mobile) {
+    	font-size: 15px;
+    }
 }

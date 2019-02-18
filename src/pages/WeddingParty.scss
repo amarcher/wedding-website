@@ -8,12 +8,13 @@
 .wedding-party__title {
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-family: 'Laila', serif;
 }
 
 .wedding-party__bridesmaids,
 .wedding-party__groomsmen {
     display: flex;
-    align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
@@ -22,7 +23,7 @@
 .wedding-party__tinder_logo {
     width: 30px;
     height: 30px;
-    margin-right: 8px;
+    margin: 0 8px;
 }
 
 .wedding-party__tinder_image {

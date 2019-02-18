@@ -11,6 +11,7 @@ import Hawaii from '../photos/Hawaii.jpg';
 import Seattle from '../photos/Seattle.jpg';
 import MonkeyForest from '../photos/MonkeyForest.jpg';
 import MonkeyForest2 from '../photos/MonkeyForest2.jpg';
+import Bali from '../photos/Bali.jpg';
 import ClintsWedding from '../photos/ClintsWedding.jpg';
 import RhodeIsland from '../photos/RhodeIsland.jpg';
 import MontanaFishing from '../photos/MontanaFishing.jpg';
@@ -44,14 +45,15 @@ const photoStripImages2 = [
 ];
 
 const photoStripImages3 = [
-  HikingMarin,
+  MonkeyForest2,
+  Bali,
   Rooftop,
   SanDiegoBeachHike,
   SoCalSaintsGame,
 ];
 
 const photoStripImages4 = [
-  MonkeyForest2,
+  HikingMarin,
   AndrewsHoney,
   SlackHolidayParty,
   SaintsGame,
@@ -95,7 +97,7 @@ class OurStory extends Component {
           <div className={storyClassName}>
             <GoogleMap
               title="Our Story"
-              url="https://www.google.com/maps/d/embed?mid=1BTNXvivqUUbnNUysytKguoUjgIYhbCU0"
+              url="https://www.google.com/maps/d/u/0/embed?mid=1BTNXvivqUUbnNUysytKguoUjgIYhbCU0"
               onReady={this.onReady}
             />
             <Story paragraphs={paragraphs} />

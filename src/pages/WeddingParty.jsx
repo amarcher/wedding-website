@@ -16,28 +16,30 @@ function WeddingParty() {
     <ProfileCard title="Groomsman" {...groomsman} key={groomsman.name} />
   ));
 
+  const tinderIcon = (
+    <PreloadedImage
+      className="wedding-party__tinder_logo"
+      imageClassName="wedding-party__tinder_image"
+      src={TinderIcon}
+    />
+  );
+
   return (
     <div className="wedding-party">
       <h1 className="wedding-party__title">
-        <PreloadedImage
-          className="wedding-party__tinder_logo"
-          imageClassName="wedding-party__tinder_image"
-          src={TinderIcon}
-        />
+        {tinderIcon}
         Bridesmaids
+        {tinderIcon}
       </h1>
       <div className="wedding-party__bridesmaids">
         {bridesmaidsCards}
       </div>
       <h1 className="wedding-party__title">
-        <PreloadedImage
-          className="wedding-party__tinder_logo"
-          imageClassName="wedding-party__tinder_image"
-          src={TinderIcon}
-        />
+        {tinderIcon}
         Groomsmen
+        {tinderIcon}
       </h1>
-      <div className="wedding-party__groomsmen">
+      <div className="wedding-party__bridesmaids">
         {groomsmenCards}
       </div>
     </div>

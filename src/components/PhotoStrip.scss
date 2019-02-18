@@ -61,4 +61,10 @@
     &:hover {
         transform: scale(1.1);
     }
+
+    @media (hover: none), (hover:on-demand) {
+        a:link {
+            transform: scale(1);
+        }
+    }
 }

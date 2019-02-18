@@ -141,6 +141,37 @@ export const ourStory = [
   'Alicia decides to stay.',
 ];
 
+const friday = {
+  date: 'Friday, November 1, 2019',
+  time: '8pm EDT',
+  location: 'TBD',
+  attire: 'Cocktail',
+  title: 'Welcome Drinks',
+};
+
+const saturday = {
+  date: 'Saturday, November 2, 2019',
+  time: '4pm EDT',
+  location: 'Island House at Belle Mer',
+  attire: 'Formal',
+  title: 'Ceremony',
+  subtitle: 'Cocktail Hour & Reception Immediately Following',
+};
+
+const sunday = {
+  date: 'Sunday, November 3, 2019',
+  time: '10am EST',
+  location: 'TBD',
+  attire: 'Casual',
+  title: 'Farewell Brunch',
+};
+
+export const events = [
+  friday,
+  saturday,
+  sunday,
+];
+
 export default {
   bridesmaids,
   groomsmen,
