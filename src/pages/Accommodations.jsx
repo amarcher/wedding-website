@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import { ParallaxBanner } from 'react-scroll-parallax';
 
-import BAKER_BEACH_CLOSEUP from '../photos/baker_beach_closeup.jpg';
+import PreloadedFrame from '../components/PreloadedFrame';
 
-const layers = [{
-  image: BAKER_BEACH_CLOSEUP,
-  expanded: true,
-  amount: 0.4,
-  slowerScrollRate: false,
-}];
+import './Accommodations.scss';
 
 /* eslint-disable-next-line react/prefer-stateless-function */
 class Accommodations extends Component {
   render() {
     return (
       <div className="accommodations">
-        <ParallaxBanner layers={layers} style={{ marginTop: -60, height: '50vw' }}>
-          <div />
-        </ParallaxBanner>
+        <PreloadedFrame
+          title="Accomodations"
+          src="https://www.google.com/maps/d/embed?mid=1MqGne-kS5gbNT_60vq4XjsO0nWKpkTev"
+          className="accomodations__map"
+        />
       </div>
     );
   }

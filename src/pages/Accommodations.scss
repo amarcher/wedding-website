@@ -1,0 +1,22 @@
+@import '../_breakpoints.scss';
+
+.accommodations {
+	margin: -80px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+.accomodations__map {
+	width: 900px;
+	height: 675px;
+
+	@include breakpoint(phablet) {
+		width: 640px;
+	}
+
+	@include breakpoint(mobile) {
+		width: 320px;
+	}
+}

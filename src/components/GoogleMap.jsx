@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import PreloadedFrame from './PreloadedFrame';
 
@@ -9,23 +10,37 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   onReady: PropTypes.func,
+  className: PropTypes.string,
+  iframeClassName: PropTypes.string,
 };
 
 const defaultProps = {
   onReady: undefined,
+  className: '',
+  iframeClassName: '',
 };
 
 function GoogleMap({
+  className,
+  iframeClassName,
   title,
   onReady,
   url,
 }) {
+  const googleMapClassName = classNames('google-map', {
+    [className]: !!className,
+  });
+
+  const frameClassName = classNames('google-map__iframe', {
+    [iframeClassName]: !!iframeClassName,
+  });
+
   return (
     <div
-      className="google-map"
+      className={googleMapClassName}
     >
       <PreloadedFrame
-        className="google-map__iframe"
+        className={frameClassName}
         title={title}
         src={url}
         onReady={onReady}
