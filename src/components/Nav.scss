@@ -34,17 +34,18 @@
     transform: scale(1);
     transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
-    &.active {
-      font-weight: bold;
+    &:visited,
+    &:link {
+      color: inherit;
     }
-    
+
     &:hover {
       transform: scale(1.1);
       color: $darkerBlue;
     }
 
-    &:visited {
-      color: inherit;
+    &.active {
+      font-weight: bold;
     }
   }
 
