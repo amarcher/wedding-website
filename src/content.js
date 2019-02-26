@@ -20,7 +20,6 @@ import Michael2 from './photos/Michael2.jpg';
 import Michael3 from './photos/Michael3.jpg';
 import Dave from './photos/Dave.jpeg';
 import Dave2 from './photos/Dave2.jpg';
-import Dave3 from './photos/Dave3.jpg';
 import Al from './photos/Al.jpg';
 import Al2 from './photos/Al2.jpeg';
 import Al3 from './photos/Al3.jpg';
@@ -74,8 +73,8 @@ const minna = {
 const allen = {
   name: 'Allen Czerwinksi',
   distance: '816 miles away',
-  relation: 'Former coworker and the one who’s most likely got an opinionated story to tell about any subject',
-  then: '',
+  relation: 'Former Google coworker, and the one who’s most likely to have an opinionated story to tell',
+  then: 'Smash Bros. teammate; Prolific roller of fives',
   now: 'iOS Developer, AIM Consulting Group',
   images: [Allen, Allen2, Allen3, Allen4],
 };
@@ -83,8 +82,8 @@ const allen = {
 const russell = {
   name: 'Russell Salerno',
   distance: '572 miles away',
-  relation: 'SF Magic best-bud and the one who’s most likely to be "feelin’ it"',
-  then: '',
+  relation: 'SF Magic best-bud, and the one who’s most likely to be “feelin’ it”',
+  then: 'Nightclub self-bouncer',
   now: 'Technical Project Lead, Intellum',
   images: [Russell, Russell2, Russell3],
 };
@@ -92,8 +91,8 @@ const russell = {
 const michael = {
   name: 'Michael Yau',
   distance: '19 miles away',
-  relation: 'College friend and the one who’s most likely not to pay extra for guacamole at Chipotle',
-  then: '',
+  relation: 'College friend, and the one who’s most likely not to pay extra for guacamole at Chipotle',
+  then: 'Self-described “3-point threat”',
   now: 'Analyst at Mercator Fund, Sycale Advisors',
   images: [Michael, Michael2, Michael3],
 };
@@ -101,17 +100,17 @@ const michael = {
 const dave = {
   name: 'Dave Lee',
   distance: '3 miles away',
-  relation: 'College friend and the one who’s most likely down for Vegas on short notice',
-  then: '',
+  relation: 'College friend, and the one who’s most likely down for Vegas on short notice',
+  then: 'Coding-bootcamp trailblazer',
   now: 'Director of Product Engineering, BuildZoom',
-  images: [Dave, Dave2, Dave3],
+  images: [Dave, Dave2],
 };
 
 const al = {
   name: 'Alexander Lee',
   distance: '1774 miles away',
-  relation: 'College roommate and the one who almost certainly needs to stay-in and study tonight',
-  then: '',
+  relation: 'College roommate, and the one who almost certainly needs to stay-in and study tonight',
+  then: 'And1™ Mixtape film subject',
   now: 'Gastroenterologist, Texas Digestive Disease Consultants',
   images: [Al, Al2, Al3],
 };
@@ -134,7 +133,7 @@ export const groomsmen = [
 
 export const ourStory = [
   'In 2006, Andy drives from Ithaca, NY to San Francisco, CA.',
-  'In 2016, Alicia decides to temporarily part ways with her East Coast life, relocating to San Francisco “for six months to a year, tops.“',
+  'In 2016, Alicia decides to temporarily part ways with her East Coast life, relocating to San Francisco “for six months to a year, tops.”',
   'Andy matches Alicia on a dating website and invites her out for a drink.',
   'They find out they have many things in common: they were both born in Louisiana, both have 1 sister and 2 brothers, and both are science PhD drop-outs.',
   'Andy starts clearing all weekends to hang out with her.',

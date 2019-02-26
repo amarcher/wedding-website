@@ -58,6 +58,10 @@
     transform: scale(1);
     transition: transform 200ms linear;
 
+    @include breakpoint(mobile) {
+        max-height: 66px;
+    }
+
     &:hover {
         transform: scale(1.1);
     }
