@@ -73,7 +73,7 @@ const minna = {
 const allen = {
   name: 'Allen Czerwinksi',
   distance: '816 miles away',
-  relation: 'Former Google coworker, and the one who’s most likely to have an opinionated story to tell',
+  relation: 'Former Google coworker, and the one with an opinionated story to tell',
   then: 'Smash Bros. teammate; Prolific roller of fives',
   now: 'iOS Developer, AIM Consulting Group',
   images: [Allen, Allen2, Allen3, Allen4],
