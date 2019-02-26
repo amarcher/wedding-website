@@ -82,7 +82,7 @@ const allen = {
 const russell = {
   name: 'Russell Salerno',
   distance: '572 miles away',
-  relation: 'SF Magic best-bud, and the one who’s most likely to be “feelin’ it”',
+  relation: 'SF Magic best-bud, and the one who’s “feelin’ it”',
   then: 'Nightclub self-bouncer',
   now: 'Technical Project Lead, Intellum',
   images: [Russell, Russell2, Russell3],
@@ -91,7 +91,7 @@ const russell = {
 const michael = {
   name: 'Michael Yau',
   distance: '19 miles away',
-  relation: 'College friend, and the one who’s most likely not to pay extra for guacamole at Chipotle',
+  relation: 'College friend, and the one who refuses to pay for Chipotle guacamole (on principle)',
   then: 'Self-described “3-point threat”',
   now: 'Analyst at Mercator Fund, Sycale Advisors',
   images: [Michael, Michael2, Michael3],
@@ -100,7 +100,7 @@ const michael = {
 const dave = {
   name: 'Dave Lee',
   distance: '3 miles away',
-  relation: 'College friend, and the one who’s most likely down for Vegas on short notice',
+  relation: 'College friend, and the one who’s down to go to Vegas tomorrow',
   then: 'Coding-bootcamp trailblazer',
   now: 'Director of Product Engineering, BuildZoom',
   images: [Dave, Dave2],
@@ -109,7 +109,7 @@ const dave = {
 const al = {
   name: 'Alexander Lee',
   distance: '1774 miles away',
-  relation: 'College roommate, and the one who almost certainly needs to stay-in and study tonight',
+  relation: 'College roommate, and the one who almost certainly needs to stay-in to study tonight',
   then: 'And1™ Mixtape film subject',
   now: 'Gastroenterologist, Texas Digestive Disease Consultants',
   images: [Al, Al2, Al3],
