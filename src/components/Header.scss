@@ -4,7 +4,6 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 48px;
 	line-height: 48px;
     font-family: 'Satisfy', cursive;
     font-size: 36px;
@@ -14,4 +13,11 @@
     color: $darkerBlue;
     background-color: $white;
     user-select: none;
+}
+
+.header__date {
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 18px;
+    padding-bottom: 12px;
 }

@@ -7,7 +7,8 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        Andy & Alicia
+        <div>Andy & Alicia</div>
+        <div className="header__date">November 2, 2019</div>
       </header>
     );
   }
