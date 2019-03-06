@@ -4,12 +4,14 @@
 .photo-strip {
     overflow: hidden;
     opacity: 1;
-    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(0px);
+    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1), transform 400ms cubic-bezier(0.310, 0.440, 0.445, 1.650);
     transition-delay: 200ms;
 }
 
 .photo-strip__hidden {
     opacity: 0;
+    transform: translateY(-10px);
 }
 
 .photo-strip__container {

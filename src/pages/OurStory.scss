@@ -14,12 +14,14 @@
     overflow: hidden;
     box-shadow: 4px 4px 16px 8px #969696;
     opacity: 1;
-    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(0);
+    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1), transform 400ms cubic-bezier(0.310, 0.440, 0.445, 1.650);
     transition-delay: 200ms;
 }
 
 .our-story__story__preloading {
     opacity: 0;
+    transform: translateY(-10px);
 }
 
 .our-story__film_section {
