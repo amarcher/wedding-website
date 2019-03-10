@@ -157,18 +157,9 @@ const saturday = {
   subtitle: 'Cocktail Hour & Reception Immediately Following',
 };
 
-const sunday = {
-  date: 'Sunday, November 3, 2019',
-  time: '10am EST',
-  location: 'TBD',
-  attire: 'Casual',
-  title: 'Farewell Brunch',
-};
-
 export const events = [
   friday,
   saturday,
-  sunday,
 ];
 
 export default {
