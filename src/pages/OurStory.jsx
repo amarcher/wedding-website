@@ -4,7 +4,9 @@ import classNames from 'classnames';
 import PhotoStrip from '../components/PhotoStrip';
 import Story from '../components/Story';
 import GoogleMap from '../components/GoogleMap';
+import BackgroundImage from '../components/BackgroundImage';
 
+import RooftopScene from '../photos/RooftopScene.jpg';
 import LazyBear from '../photos/LazyBear.jpg';
 import JensensWedding from '../photos/JensensWedding.jpg';
 import Hawaii from '../photos/Hawaii.jpg';
@@ -87,6 +89,7 @@ class OurStory extends Component {
 
     return (
       <div className="our-story">
+        <BackgroundImage src={RooftopScene} />
         <div className="our-story__film_section">
           <div className="our-story__film">
             <PhotoStrip images={photoStripImages2} />

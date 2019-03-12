@@ -1,7 +1,8 @@
 import React from 'react';
-import ProfileCard from '../components/ProfileCard';
 
+import ProfileCard from '../components/ProfileCard';
 import PreloadedImage from '../components/PreloadedImage';
+
 import TinderIcon from '../photos/TinderIcon.png';
 import { bridesmaids, groomsmen } from '../content';
 

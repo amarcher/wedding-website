@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import './PreloadedImage.scss';
 
 const propTypes = {
+  alt: PropTypes.string,
   src: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   style: PropTypes.object,
@@ -15,6 +16,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  alt: '',
   className: '',
   imageClassName: '',
   style: {},
@@ -61,6 +63,7 @@ class PreloadedImage extends Component {
 
   render() {
     const {
+      alt,
       className,
       imageClassName,
       style,
@@ -83,7 +86,7 @@ class PreloadedImage extends Component {
         <div className={containerClass} style={style}>
           <img
             className={imgClass}
-            alt={src}
+            alt={alt || src}
             src={src}
           />
         </div>
