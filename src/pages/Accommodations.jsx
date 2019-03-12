@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 import PreloadedFrame from '../components/PreloadedFrame';
 import Hotel from '../components/Hotel';
+import InfoCard from '../components/InfoCard';
 import BackgroundImage from '../components/BackgroundImage';
 import NewportBridge from '../photos/NewportBridge.jpg';
-import hotels, { hotelInfo, transportationInfo } from '../hotels';
+import hotels, { hotelInfo, airportInfo, trainInfo } from '../hotels';
 
 import './Accommodations.scss';
 
@@ -14,8 +15,9 @@ class Accommodations extends Component {
     return (
       <div className="accommodations">
         <BackgroundImage src={NewportBridge} className="accommodations__background" />
-        <div className="accommodations__info">
-          {transportationInfo}
+        <div className="accommodations__travel">
+          <InfoCard text={airportInfo} logo="https://cdn.dribbble.com/users/839429/screenshots/4519779/plane-travel-icon-rebound2.gif" />
+          <InfoCard text={trainInfo} logo="https://cdn.dribbble.com/users/877668/screenshots/3587574/google-train.gif" />
         </div>
         <div className="accommodations__info">
           {hotelInfo}

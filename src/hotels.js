@@ -49,7 +49,19 @@ const gurneys = {
 
 export const hotelInfo = 'For your convenience, blocks of rooms at special rates have been reserved at several hotels near the wedding venue.';
 
-export const transportationInfo = 'The closest major airport to Newport, Rhode Island is Boston’s Logan International (BOS). You can either rent a car from that airport or take a train (Amtrack).';
+export const airportInfo = [
+  'The two closest airports to Newport are Providence’s T.F. Green Airport (PVD) and Boston’s Logan Airport (BOS).',
+  'The drive from the Providence airport to Newport is roughly 40 minutes and the drive from Boston’s airport to Newport is approximately 1.5 hours.',
+  'From either airport, you can rent a car, take a taxi, or order an Uber/Lyft.',
+  'Additionally, there are Airport Shuttles from T.F. Green to Newport: Orange Cab 401-841-0200',
+];
+
+export const trainInfo = [
+  'Amtrak runs from Penn Station in New York; South Station in Boston; and Providence Station in Providence, Rhode Island.',
+  'From the Providence train station, a car service can take you to Newport (45 minutes away).',
+  'Alternatively, certain Amtrak lines stop in West Kingston, Rhode Island, which is 25 minutes from Newport.',
+  'If you are traveling from NYC, you can easily take Amtrak from Penn Station right to West Kingston.',
+];
 
 export default [
   holidayInn,
