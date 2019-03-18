@@ -1,17 +1,19 @@
 @import '../_colors.scss';
+@import '../_constants.scss';
 
 .profile-card {
     min-height: 520px;
-    width: 280px;
+    width: $mobileCardWidth;
     background-color: white;
     user-select: none;
     box-shadow: 4px 4px 8px $grey;
     margin: 16px;
+    text-align: left;
 }
 
 .profile-card__image {
     height: 240px;
-    width: 280px;
+    width: $mobileCardWidth;
 }
 
 .profile-card__name_and_distance {
@@ -19,6 +21,11 @@
 }
 
 .profile-card__content {
+    padding: 0;
+}
+
+.profile-card__name_and_distance,
+.profile-card__description {
     padding: 0 10px;
 }
 

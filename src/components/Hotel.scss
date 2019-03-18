@@ -1,5 +1,5 @@
 @import '../_colors.scss';
-@import '../_breakpoints.scss';
+@import '../_constants.scss';
 
 a {
   text-decoration: none;
@@ -9,7 +9,7 @@ a {
 .hotel {
   margin: 0 auto;
   min-height: 380px;
-  width: 280px;
+  width: $mobileCardWidth;
   background-color: white;
   box-shadow: 4px 4px 8px $grey;
   margin: 16px;
@@ -17,7 +17,7 @@ a {
 
 .hotel__image {
   height: 240px;
-  width: 280px;
+  width: $mobileCardWidth;
 }
 
 .hotel__content {

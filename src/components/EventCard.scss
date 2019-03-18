@@ -1,9 +1,10 @@
 @import '../_colors.scss';
+@import '../_constants.scss';
 
 .event-card {
     position: relative;
     flex: 0 0 0;
-    min-width: 320px;
+    min-width: $mobileCardWidth;
     max-width: 480px;
     background-color: white;
     user-select: none;
@@ -11,6 +12,7 @@
     margin: 16px;
     display: flex;
     flex-direction: column;
+    text-align: left;
 
     p {
         margin: 4px 0;

@@ -32,7 +32,7 @@ const homewoodSuites = {
 
 const vanderbilt = {
   link: 'https://aubergeresorts.com/vanderbilt/',
-  logo: 'https://161a422rnzmd251lsc3ltokz-wpengine.netdna-ssl.com/vanderbilt/wp-content/uploads/sites/9/2019/01/VAN-logo-vertical-color-large.png',
+  logo: 'https://www.spaindex.com/wp-content/uploads/spaindex_vanderbilt-grace-hotel-spa.jpg',
   name: 'Vanderbilt',
   images: vanderbiltImages,
 };
