@@ -21,6 +21,7 @@ const holidayInn = {
   logo: HolidayInn,
   name: 'Holiday Inn',
   images: holidayInnImages,
+  instructions: 'call 401-848-7128. Ask for Yang/Archer group rate.',
 };
 
 const homewoodSuites = {
@@ -28,6 +29,7 @@ const homewoodSuites = {
   logo: 'https://homewoodsuites.hilton.com/en/hw/media/images/logos/hdr_logo.gif',
   name: 'Homewood Suites',
   images: homewoodSuitesImages,
+  instructions: 'Call 401-848-2700 and mention group code "YAW".',
 };
 
 const vanderbilt = {
@@ -35,6 +37,7 @@ const vanderbilt = {
   logo: 'https://www.spaindex.com/wp-content/uploads/spaindex_vanderbilt-grace-hotel-spa.jpg',
   name: 'Vanderbilt',
   images: vanderbiltImages,
+  instructions: 'Call 401-846-6200. Ask for Yang/Archer group rate.',
 };
 
 const gurneys = {
