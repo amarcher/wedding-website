@@ -21,7 +21,7 @@ const holidayInn = {
   logo: HolidayInn,
   name: 'Holiday Inn',
   images: holidayInnImages,
-  instructions: 'call 401-848-7128. Ask for Yang/Archer group rate.',
+  instructions: 'Call 401-848-7128. Ask for Yang/Archer group rate.',
 };
 
 const homewoodSuites = {
