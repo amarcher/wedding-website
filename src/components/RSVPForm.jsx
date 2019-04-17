@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { submitRsvp } from '../actions';
-import Frame from '../photos/Frame.png';
 
 import './RSVPForm.scss';
 
 const STATUS = {
   FAILED: 'error',
   UNSUBMITTED: 'unsubmitted',
-  SUBMITTING: 'submitting',
   SUBMITTED: 'submitted',
 };
-
-const EMAIL_REGEXP = RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/);
 
 class RSVPForm extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      attendingWedding: 1,
+      attendingWedding: true,
+      attendingWelcome: false,
       isCardOpen: false,
       email: '',
-      guestCount: 0,
+      guestCount: 1,
       name: '',
       status: STATUS.UNSUBMITTED,
     };
@@ -31,34 +28,20 @@ class RSVPForm extends Component {
     this.onFailure = this.onFailure.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.onSent = this.onSent.bind(this);
     this.onRetry = this.onRetry.bind(this);
     this.toggleCardOpen = this.toggleCardOpen.bind(this);
-  }
-
-  componentWillUnmount() {
-    if (this.timeout) window.clearTimeout(this.timeout);
+    this.toggleCardOpen = this.toggleCardOpen.bind(this);
   }
 
   onChange(e) {
     const { value, id: fieldName } = e.target;
 
-    this.setState(prevState => ({
-      [fieldName]: (typeof prevState[fieldName] === 'number') ? parseInt(value, 10) : value,
+    this.setState(() => ({
+      [fieldName]: value,
     }));
   }
 
   onSuccess() {
-    this.setState(() => ({
-      status: STATUS.SUBMITTING,
-    }));
-
-    this.timeout = setTimeout(this.onSent, 3500);
-  }
-
-  onSent() {
-    if (this.timeout) this.timeout = undefined;
-
     this.setState(() => ({
       status: STATUS.SUBMITTED,
     }));
@@ -79,9 +62,9 @@ class RSVPForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    if (!this.isValid()) return;
+    const { status, ...fields } = this.state;
 
-    const { status, isCardOpen, ...fields } = this.state;
+    this.toggleCardOpen();
 
     submitRsvp(fields).then(this.onSuccess).catch(this.onFailure);
   }
@@ -92,16 +75,11 @@ class RSVPForm extends Component {
     }));
   }
 
-  isValid() {
-    const { email, name } = this.state;
-
-    return EMAIL_REGEXP.test(email) && name.length;
-  }
-
 
   renderEnvelope() {
     const {
       attendingWedding,
+      attendingWelcome,
       email,
       guestCount,
       isCardOpen,
@@ -109,55 +87,123 @@ class RSVPForm extends Component {
       status,
     } = this.state;
 
-    const envelopeClassName = classNames('rsvp-form__envelope', {
-      sending: status === STATUS.SUBMITTING,
-      'card-in': !isCardOpen,
+    const envelopeClassName = classNames('library-card', 'envelope', {
+      'card-in': !isCardOpen || status === STATUS.SUBMITTED,
       'card-out': isCardOpen && status !== STATUS.SUBMITTED,
     });
+
+    let stampText;
+    if (status !== STATUS.SUBMITTED) {
+      stampText = 'Click to RSVP';
+    } else {
+      stampText = 'Thanks for RSVP-ing!';
+    }
 
     return (
       <div className="rsvp-form">
         <div className={envelopeClassName}>
-          <button className="rsvp-form__front" type="button" onClick={this.toggleCardOpen}>
-            <p className="rsvp-form__stamp">Click to RSVP</p>
+          <button className="front" type="button" onClick={this.toggleCardOpen}>
+            <p className="stamp">{stampText}</p>
           </button>
 
-          <div className="rsvp-form__card" style={{ backgroundImage: `url(${Frame})` }}>
-            <h2 className="rsvp-form__card-title">RSVP</h2>
-            <h3 className="rsvp-form__card-subtitle">Kindly Respond by August&#8239;31,&#8239;2019</h3>
+          <div className="card">
+            <h2 className="author">RSVP</h2>
 
+            <table>
+              <tr className="top-row">
+                <th className="due-date" />
+                <th className="issued-to">Your Response</th>
+              </tr>
+              <tr>
+                <td className="due-date form-label">
+                  <time>Name</time>
+                </td>
+                <td className="issued-to" />
+              </tr>
+              <tr>
+                <td className="due-date form-label">
+                  <time>Email</time>
+                </td>
+                <td className="issued-to">
+                  <br />
+                </td>
+              </tr>
+              <tr>
+                <td className="due-date form-label">
+                  <time>Wedding</time>
+                </td>
+                <td className="issued-to">
+                  <br />
+                </td>
+              </tr>
+              <tr>
+                <td className="due-date form-label">
+                  <time>Welcome</time>
+                </td>
+                <td className="issued-to">
+                  <br />
+                </td>
+              </tr>
+              <tr>
+                <td className="due-date form-label">
+                  <time>Guests</time>
+                </td>
+                <td className="issued-to">
+                  <br />
+                </td>
+              </tr>
+            </table>
             <form className="rsvp-form__form" onSubmit={this.onSubmit}>
-              <input id="name" name="name" type="text" placeholder="Your Name" value={name} onChange={this.onChange} />
-              <input id="email" name="email" type="email" placeholder="Your Email" value={email} onChange={this.onChange} />
-              <div className="rsvp-form__attending_guests">
-                {/* eslint-disable-next-line */}
-                <label>
-                  <input type="radio" value={1} id="attendingWedding" name="attendingWedding" onChange={this.onChange} checked={!!attendingWedding} />
-                  Will Attend
-                </label>
-                <div className="rsvp-form__guest-count-container">
-                  <select value={guestCount} id="guestCount" className="rsvp-form__guest-count" name="guestCount" onChange={this.onChange}>
-                    <option value={0}>1</option>
-                    <option value={1}>2</option>
-                    <option value={2}>3</option>
-                    <option value={3}>4</option>
-                    <option value={4}>5</option>
-                    <option value={5}>6</option>
-                    <option value={6}>7</option>
-                  </select>
-                  No. Attending
-                </div>
+              <input id="name" name="name" type="text" placeholder=" Enter Your Name" value={name} onChange={this.onChange} />
+              <input id="email" name="email" type="email" placeholder=" Enter Your Email Address" value={email} onChange={this.onChange} />
+              <div className="attending-container">
+                <select id="attendingWedding" className="attending" name="attendingWedding" onChange={this.onChange}>
+                  <option value selected={attendingWedding}>Attending</option>
+                  <option value={false} selected={!attendingWedding}>Not Attending</option>
+                </select>
               </div>
-              {/* eslint-disable-next-line */}
-              <label>
-                <input type="radio" value={0} id="attendingWedding" name="attendingWedding" onChange={this.onChange} checked={!attendingWedding} />
-                Regretfully Cannot Attend
-              </label>
-              <button className="submit" type="submit" disabled={!this.isValid()}>SUBMIT</button>
+              <div className="attending-container">
+                <select id="attendingWelcome" className="attending" name="attendingWelcome" onChange={this.onChange}>
+                  <option value selected={attendingWelcome}>Attending</option>
+                  <option value={false} selected={!attendingWelcome}>Not Attending</option>
+                </select>
+              </div>
+              <input id="guestCount" className="plusone" name="guestCount" type="number" placeholder="1" value={guestCount} onChange={this.onChange} />
+              <button className="submit" type="submit">SUBMIT</button>
             </form>
           </div>
         </div>
       </div>
+    );
+  }
+
+  renderForm() {
+    const {
+      email,
+      guestCount,
+      name,
+      attendingWedding,
+      attendingWelcome,
+    } = this.state;
+
+    return (
+      <form className="rsvp-form" onSubmit={this.onSubmit}>
+        <input type="email" id="email" placeholder="Email" value={email} onChange={this.onChange} />
+        <input type="text" id="name" placeholder="Name" value={name} onChange={this.onChange} />
+        <label htmlFor={guestCount}>
+          Guests:&nbsp;
+          <input type="number" id="guestCount" value={guestCount} onChange={this.onChange} />
+        </label>
+        <label htmlFor={guestCount}>
+          Attending Wedding:&nbsp;
+          <input type="checkbox" id="attendingWedding" checked={attendingWedding} onChange={this.onChange} />
+        </label>
+        <label htmlFor={guestCount}>
+          Attending Welcome:&nbsp;
+          <input type="checkbox" id="attendingWelcome" checked={attendingWelcome} onChange={this.onChange} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
     );
   }
 
@@ -172,11 +218,13 @@ class RSVPForm extends Component {
   }
 
   renderSuccess() {
-    const { attendingWedding } = this.state;
+    const { name: fullName, attendingWedding } = this.state;
+
+    const name = fullName.split(' ')[0];
 
     return (
       <div className="rsvp-form__success">
-        <h1>{attendingWedding ? 'We can’t wait to see you!' : 'We are sorry we’ll miss you'}</h1>
+        <h1>{attendingWedding ? `${name}, we cant wait to see you!` : `${name}, we are sorry we’ll miss you`}</h1>
       </div>
     );
   }
@@ -190,7 +238,6 @@ class RSVPForm extends Component {
       case STATUS.SUBMITTED:
         return this.renderSuccess();
       case STATUS.UNSUBMITTED:
-      case STATUS.SUBMITTING:
       default:
         return this.renderEnvelope();
     }

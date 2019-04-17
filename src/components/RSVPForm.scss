@@ -1,259 +1,90 @@
-@import '../_colors.scss';
-@import '../_breakpoints.scss';
-
-$placeholder-color: $grey;
-
-$envelope-angle: 3deg;
-
-$begin: 0deg;
-$middle: -1deg;
-$end: -3deg;
-
-$width: 600px;
-$height: 430px;
-
-$font-size: 20px;
-$font-size-inputs: 28px;
-
-$small-width: 320px;
-$small-height: 380px;
-$small-font-size: 16px;
-$small-font-size-inputs: 22px;
-
-$envelope-color: hsl( 50, 50%, 87%);
-$envelope-inside-color: hsl( 50, 50%, 84%);
-
-$base-z-index: 11;
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	font-family: 'baskerville_small_casmallcaps';
-	font-weight: 100;
-	text-transform: uppercase;
-	font-size: $font-size;
-	letter-spacing: 0.1em;
-	color: $placeholder-color;
-	opacity: 1; /* Firefox */
-
-	@include breakpoint(phablet) {
-		font-size: $small-font-size;
-	}
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-	font-family: 'baskerville_small_casmallcaps';
-	font-weight: 100;
-	text-transform: uppercase;
-	font-size: $font-size;
-	letter-spacing: 0.1em;
-	color: $placeholder-color;
-
-	@include breakpoint(phablet) {
-		font-size: $small-font-size;
-	}
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-	font-family: 'baskerville_small_casmallcaps';
-	font-weight: 100;
-	text-transform: uppercase;
-	font-size: $font-size;
-	letter-spacing: 0.1em;
-	color: $placeholder-color;
-
-	@include breakpoint(phablet) {
-		font-size: $small-font-size;
-	}
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-	font-family: 'baskerville_small_casmallcaps';
-	font-weight: 100;
-	text-transform: uppercase;
-	font-size: $font-size;
-	letter-spacing: 0.1em;
-	color: $placeholder-color;
-
-	@include breakpoint(phablet) {
-		font-size: $small-font-size;
-	}
-}
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
 .rsvp-form {
-	font-family: 'baskerville_small_casmallcaps';
-	font-weight: 100;
-	text-transform: uppercase;
-	font-size: $font-size;
-	letter-spacing: 0.1em;
-	margin-top: -30px;
-	margin-left: -15px;
+	padding: 50px;
 	-webkit-font-smoothing: antialiased;
-	position: relative;
-	z-index: $base-z-index;
-
-	@include breakpoint(phablet) {
-		font-size: $small-font-size;
-	}
 }
 
-.rsvp-form__card-title {
-	color: $gold;
-	font-weight: 500;
-	font-family: 'breamcatcherregular';
-	letter-spacing: 0.3em;
-	font-stretch: expanded;
-	text-transform: uppercase;
-	font-size: 68px;
-	margin-bottom: 0;
-
-	@include breakpoint(phablet) {
-		font-size: 48px;
-	}
+.library-card {
+	font-family: monospace;
+	transform: rotate( 3deg);
 }
 
-.rsvp-form__card-subtitle {
-	font-family: 'baskerville_small_casmallcaps';
-	font-weight: 100;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	margin-bottom: 0;
-}
-
-.rsvp-form__envelope {
-	font-family: 'baskerville_small_casmallcaps';
-	font-weight: 100;
-	transform: rotate($envelope-angle);
+.library-card.envelope {
+	background-color: hsl( 50, 50%, 70%);
+	border-radius: 3px;
+	box-shadow: 0 0 1px hsla( 0, 0%, 0%, 0.5);
+	height: 300px;
 	margin: 100px auto 0;
+	padding-top: 50px;
 	position: relative;
-	width: $width + 10px;
-	height: $height;
-	transition: transform 800ms ease-in;
-	transition-delay: 2s;
-	background-color: $envelope-inside-color;
-	color: $rsvp-grey;
-
-	// Triangular Flap
-	&::before {
-		content: '';
-		position: absolute;
-		top: -160px;
-		display: block;
-		width: 0; 
-		height: 0;
-		border-style: solid;
-		border-width: 0 (($width + 10px) / 2) 160px (($width + 10px) / 2);
-		border-color: transparent transparent $envelope-inside-color transparent;
-		transition: transform 500ms ease-out, z-index 0ms linear;
-		transition-delay: 1000ms;
-		transform-origin: bottom;
-		-webkit-transform-origin-y: bottom;
-		z-index: $base-z-index;
-	}
-
-	&.sending {
-		transform: translateX(2000px);
-
-		&::before {
-			transform: rotateX(-180deg);
-			z-index: $base-z-index + 2;
-		}
-	}
-
-	@include breakpoint(phablet) {
-		width: $small-width + 10px;
-		height: $small-height;
-
-		&::before {
-			border-width: 0 (($small-width + 10px) / 2) 160px (($small-width + 10px) / 2);
-		}
-	}
+	width: 290px;
 }
 
-.rsvp-form__front {
+.library-card > .front {
+	background-color: hsl( 50, 50%, 70%);
+	background: -webkit-radial-gradient( hsl( 50, 50%, 90%), hsl( 50, 50%, 70%)) 50% -150px, hsl( 50, 50%, 70%);
+	background-repeat: no-repeat;
+	background-size: 150% 500px;
 	border-radius: 2px 2px 3px 3px;
-	box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 -2px 3px hsla( 0, 0%, 0%, 0.1);
 	cursor: pointer;
-	height: $height;
+	height: 350px;
+	margin-left: -10px;
 	position: relative;
-	width: $width + 10px;
-	z-index: $base-z-index + 1;
-	border-style: solid;
-	border-width: 140px (($width + 20px) / 2) ($height / 2) (($width + 20px) / 2);
-	border-color: transparent $envelope-color $envelope-color $envelope-color;
-
+	width: 300px;
+	z-index: 1;
 
 	&:active, &:focus {
 		outline: none;
 	}
-
-	@include breakpoint(phablet) {
-		width: $small-width + 10px;
-		height: $small-height;
-		border-width: 140px (($small-width + 20px) / 2) ($small-height / 2) (($small-width + 20px) / 2);
-	}
 }
 
-.rsvp-form__card {
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;  
-	background-color: $white;
+.library-card > .card {
+	background-color: #f0f0f0;
 	border-radius: 3px;
 	box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
-	height: $height;
-	margin-left: 5px;
+	height: 450px;
+	margin-left: -5px;
 	position: absolute;
 	top: -60px;
-	width: $width;
-	-webkit-animation: card-stuff 1s 1;
+	width: 290px;
+	// -webkit-animation: card-stuff 1s 1;
 	-webkit-backface-visibility: hidden;
-	-webkit-transform: rotate( $begin);
-	line-height: $font-size-inputs + 4px;
-
-	@include breakpoint(phablet) {
-		width: $small-width;
-		height: $small-height;
-		background-size: cover;
-		line-height: $small-font-size-inputs + 4px;
-	}
+	-webkit-transform: rotate( 1deg);
 }
 
-.rsvp-form__envelope.card-out > .rsvp-form__card {
+.envelope.card-out > .card {
 	box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 	-webkit-animation: card-pull 1s 1;
-	-webkit-transform: rotate( $end);
-	z-index: $base-z-index + 2;
+	-webkit-transform: rotate( -5deg);
+	z-index: 2;
 }
 
-.rsvp-form__envelope.card-in > .rsvp-form__card {
+.envelope.card-in > .card {
 	box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
-	z-index: $base-z-index;
-}
-
-.rsvp-form__envelope.sending > .rsvp-form__card {
 	-webkit-animation: card-in 1s 1;
-	-webkit-transform: rotate( $begin);
-	top: 0;
-	z-index: $base-z-index;
+	z-index: 0;
 }
 
 @-webkit-keyframes card-pull {
 	0% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
-		-webkit-transform: rotate( $begin);
-		z-index: $base-z-index;
+		-webkit-transform: rotate( 1deg);
+		z-index: 0;
 	}
 	50% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
-		top: -$height - 30px;
-		-webkit-transform: rotate( $middle);
-		z-index: $base-z-index;
+		top: -400px;
+		-webkit-transform: rotate( -1deg);
+		z-index: 0;
 	}
 	100% {
 		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
-		-webkit-transform: rotate( $end);
-		z-index: $base-z-index + 2;
+		-webkit-transform: rotate( -5deg);
+		z-index: 2;
 	}
 }
 
@@ -261,23 +92,23 @@ $base-z-index: 11;
 	0% {
 		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
-		-webkit-transform: rotate( $end);
-		z-index: $base-z-index + 2;
+		-webkit-transform: rotate( -5deg);
+		z-index: 2;
 	}
 	50% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
-		top: -$height - 30px;
-		-webkit-transform: rotate( $middle);
-		z-index: $base-z-index + 2;
+		top: -400px;
+		-webkit-transform: rotate( -1deg);
+		z-index: 2;
 	}
 	55% {
-		z-index: $base-z-index;
+		z-index: 0;
 	}
 	100% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
-		top: 0;
-		-webkit-transform: rotate( $begin);
-		z-index: $base-z-index;
+		top: -60px;
+		-webkit-transform: rotate( 1deg);
+		z-index: 0;
 	}
 }
 
@@ -285,177 +116,153 @@ $base-z-index: 11;
 	0% {
 		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
-		-webkit-transform: rotate( $end);
-		z-index: $base-z-index + 2;
+		-webkit-transform: rotate( -5deg);
+		z-index: 2;
 	}
 	50% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
-		top: -$height - 30px;
-		-webkit-transform: rotateZ( $middle);
-		z-index: $base-z-index;
+		top: -400px;
+		-webkit-transform: rotateZ( -1deg);
+		z-index: 0;
 	}
 	100% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
-		-webkit-transform: rotate( $begin);
-		z-index: $base-z-index;
+		-webkit-transform: rotate( 1deg);
+		z-index: 0;
 	}
 }
 
-.rsvp-form__stamp {
-	color: hsl( 50, 30%, 20%);
-	font-family: 'ritzynormalregular';
-	font-size: 36px;
-	text-align: center;
-	position: absolute;
-	width: $width;
-	left: 50%;
-	top: 50px;
-	transform: translate(-50%, -50%);
+.library-card .card {
+	line-height: 36px;
+}
 
-	@include breakpoint(phablet) {
-		width: $small-width;
-		font-size: $small-font-size-inputs;
+.library-card .stamp {
+	color: hsl( 50, 30%, 20%);
+	font-family: Futura;
+	font-size: 16px;
+	position: relative;
+	top: 100px;
+	text-align: center;
+// text-transform: uppercase;
+}
+
+.library-card .dewey-decimal {
+	float: left;
+	height: 106px;
+	padding-left: 10px;
+	width: 60px;
+}
+
+.library-card .title {
+	margin-right: 75px;
+	line-height: 18px;
+	text-align: center;
+}
+
+$due-card-line-color: #000090;
+.library-card table {
+	clear: left;
+	tr {
+		border-top: 1px solid $due-card-line-color;
+	}
+	td:last-child {
+		border-left: 1px solid $due-card-line-color;
+	}
+	tr:nth-child(1) {
+		border-top: 2px solid $due-card-line-color;
+	}
+	tr:nth-child(2) {
+		border-top: 2px solid $due-card-line-color;
+	}
+}
+
+.library-card th {
+	font-family: Futura;
+	font-size: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.library-card .due-date {
+	padding: 0 2px;
+	width: 61px;
+}
+
+.library-card td.due-date {
+	color: #af0000;
+	font-size: 12px;
+	font-weight: bold;
+	position: relative;
+	-webkit-transform: rotate( 1deg);
+}
+
+.library-card .issued-to {
+	padding: 0 5px;
+	width: 210px;
+}
+
+.library-card td.issued-to {
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 32px;
+}
+
+.form-label {
+	text-align: right;
+	* {
+		padding-right: 5px;
 	}
 }
 
 .rsvp-form__form {
 	user-select: auto;
-	margin: 10px auto;
-	max-width: $width - 140px;
-
-	@include breakpoint(phablet) {
-		max-width: $small-width - 20px;
-	}
-
-	input[type="text"],
-	input[type="email"] {
-		display: block;
-		outline: none;
+	position: absolute;
+	top: 106px;
+	left: 85px;
+	input {
 		border: none;
-		background: $white;
-		border-bottom: 1px solid $rsvp-grey;
-		font-family: Satisfy, cursive;
-		width: 100%;
-		height: $font-size-inputs;
-		font-weight: 200;
-		text-indent: 10px;
-		font-size: $font-size-inputs;
-		color: black;
-
-		&:-webkit-autofill,
-		&:-webkit-autofill:hover, 
-		&:-webkit-autofill:focus, 
-		&:-webkit-autofill:active  {
-		    -webkit-box-shadow: 0 0 0 30px $white inset !important;
-		}
-
-		@include breakpoint(phablet) {
-			font-size: $small-font-size-inputs;
-			height: $small-font-size-inputs;
-		}
+		background: rgba(255, 255, 255, 0.0);
+		height: 35px;
+		width: 200px;
 	}
-
-	.rsvp-form__attending_guests {
-		margin-top: 20px;
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
+	.attending-container {
+		padding: 0px;
+		margin: 0px;
+		height: 38px;
+		text-align: left;
 	}
-
-	.rsvp-form__guest-count {
-		padding-right: 12px;
-
-		@include breakpoint(phablet) {
-			padding-right: 4px;
-		}
-	}
-
-	.rsvp-form__guest-count-container {
-		text-align: right;
-
-		span {
-			color: $placeholder-color;
-		}
-	}
-
 	label {
-		font-family: 'baskerville_small_casmallcaps';
-		font-weight: 100;
-		text-transform: uppercase;
-		font-size: $font-size;
-		letter-spacing: 0.1em;
+		color: rgba(0, 0, 0, 0.3);
 		display: block;
 		float: left;
+		margin-left: 15px;
 		padding-left: 15px;
 		text-indent: -15px;
-
-		@include breakpoint(phablet) {
-			font-size: $small-font-size;
-			letter-spacing: initial;
-			padding-left: 4px;
-			text-indent: -4px;
-		}
 	}
 
 	select {
-		outline: none;
+		margin-left: 7px;
 		padding: 5px 0;
 		appearance: none;
-		background-color: transparent;
+		background-color: #f0f0f0;
 		border: none;
-		color: black;
-		font-size: $font-size;
-
-		option {
-			color: black;
-			font-size: $font-size;
-		}
-
-		@include breakpoint(phablet) {
-			font-size: $small-font-size;
-
-			option {
-				font-size: $small-font-size;
-			}
+		color: rgba(0,0,0,0.5);
+		option{
+			text: rgba(0,0,0,1);
 		}
 	}
 
 	.submit {
-		position: absolute;
-		bottom: 50px;
-		left: 50%;
-		transform: translateX(-50%);
 		cursor: pointer;
 		text-align: center;
 		letter-spacing: 5px;
-		color: $rsvp-grey;
-		border: 3px solid $rsvp-grey;
+		font-family: monospace;
+		font-size: 150%;
+		margin-left: 30px;
+		color: red;
+		border: 3px solid red;
 		border-radius: 10px;
-		background-color: transparent;
-		display: block;
-		opacity: 1;
-		transition: opacity 300ms;
-		max-width: 200px;
-		padding: 4px 8px;
-
-		&:disabled {
-			opacity: 0.1;
-			border-color: $rsvp-grey;
-			cursor: not-allowed;
-
-			&:hover {
-				text-transform: none;
-			}
-		}
-
-		@include breakpoint(phablet) {
-			max-width: 160px;
-		}
+		width: 150px;
+		background-color: #f0f0f0;
 	}
-}
-
-.rsvp-form__success,
-.rsvp-form__failure {
-	font-family: 'baskerville_small_casmallcaps', Laila, serif; 
 }
