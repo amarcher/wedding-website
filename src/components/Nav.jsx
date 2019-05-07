@@ -14,6 +14,7 @@ class Nav extends Component {
             <li className="nav__list-item"><NavLink to="/event-details">Event Details</NavLink></li>
             <li className="nav__list-item"><NavLink to="/wedding-party">Wedding Party</NavLink></li>
             <li className="nav__list-item"><NavLink to="/accommodations">Accommodations</NavLink></li>
+            <li className="nav__list-item"><NavLink to="/rsvp">RSVP</NavLink></li>
           </ul>
         </nav>
         <div className="nav__spacer" />
