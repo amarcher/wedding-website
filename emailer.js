@@ -31,24 +31,47 @@ transporter.verify((error) => {
 });
 
 const mailOptions = {
-  from: auth.user,
+  from: `Alicia & Andy <${auth.user}>`,
   bcc: [process.env.OTHER_RECIPIENT_1, process.env.OTHER_RECIPIENT_2],
   subject: 'Wedding RSVP Confirmation',
 };
 
-function getTemplate(data) {
-  return JSON.stringify(data);
+function getAttendingTemplate({ name, guestCount, attendingWelcome }) {
+  const firstName = name.split(' ')[0];
+
+  const guestPhrase = guestCount && parseInt(guestCount, 10) === 1 ? 'guest' : `${guestCount} guests`;
+  const guestMessage = !guestCount || parseInt(guestCount, 10) === 0 ? '' : ` and your ${guestPhrase}`;
+
+  const welcomeMessage = parseInt(attendingWelcome, 10) === 1 ? ' We’ll also plan on seeing you Friday evening for welcome drinks.' : '';
+
+  return `${firstName},\n\nThank you for your RSVP!\n\nWe are excited to see you${guestMessage} at our wedding.${welcomeMessage}\n\nSincerely,\nAlicia & Andy`;
 }
 
-function sendEmail(data) {
+function getNotAttendingTemplate({ name }) {
+  const firstName = name.split(' ')[0];
+
+  return `${firstName},\n\nThank you for your RSVP.\n\nWe are so sorry you won’t be able to attend. Please let us know if anything changes.\n\nSincerely,\nAlicia & Andy`;
+}
+
+function sendEmail({
+  attendingWedding,
+  attendingWelcome,
+  email: address,
+  guestCount,
+  name,
+} = {}) {
+  const text = parseInt(attendingWedding, 10) === 1
+    ? getAttendingTemplate({ name, guestCount, attendingWelcome })
+    : getNotAttendingTemplate({ name });
+
   return transporter.sendMail({
     ...mailOptions,
     to: {
-      name: data.name,
-      address: data.email,
+      name,
+      address,
     },
-    text: getTemplate(data),
-  }).then(console.log);
+    text,
+  }).then(console.log).catch(console.log);
 }
 
 module.exports = sendEmail;
