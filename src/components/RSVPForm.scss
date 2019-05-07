@@ -1,0 +1,367 @@
+@import '../_colors.scss';
+
+$placeholder-color: $grey;
+
+$envelope-angle: 3deg;
+
+$begin: 0deg;
+$middle: -1deg;
+$end: -3deg;
+
+$width: 600px;
+$height: 430px;
+
+$font-size: 20px;
+$font-size-inputs: 32px;
+
+$envelope-color: hsl( 50, 50%, 87%);
+$envelope-inside-color: hsl( 50, 50%, 84%);
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	font-family: 'baskerville_small_casmallcaps';
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: $font-size;
+	letter-spacing: 0.1em;
+	color: $placeholder-color;
+	opacity: 1; /* Firefox */
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	font-family: 'baskerville_small_casmallcaps';
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: $font-size;
+	letter-spacing: 0.1em;
+	color: $placeholder-color;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-family: 'baskerville_small_casmallcaps';
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: $font-size;
+	letter-spacing: 0.1em;
+	color: $placeholder-color;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+	font-family: 'baskerville_small_casmallcaps';
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: $font-size;
+	letter-spacing: 0.1em;
+	color: $placeholder-color;
+}
+
+.rsvp-form {
+	font-family: 'baskerville_small_casmallcaps';
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: $font-size;
+	letter-spacing: 0.1em;
+	margin-top: -30px;
+	margin-left: -15px;
+	-webkit-font-smoothing: antialiased;
+}
+
+.rsvp-form__card-title {
+	color: $gold;
+	font-weight: 500;
+	font-family: 'breamcatcherregular';
+	letter-spacing: 0.3em;
+	font-stretch: expanded;
+	text-transform: uppercase;
+	font-size: 68px;
+	margin-bottom: 0;
+}
+
+.rsvp-form__card-subtitle {
+	font-family: 'baskerville_small_casmallcaps';
+	font-weight: 100;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.rsvp-form__envelope {
+	font-family: 'baskerville_small_casmallcaps';
+	font-weight: 100;
+	transform: rotate($envelope-angle);
+	margin: 100px auto 0;
+	position: relative;
+	width: $width + 10px;
+	height: $height;
+	transition: transform 800ms ease-in;
+	transition-delay: 2s;
+	background-color: $envelope-inside-color;
+	color: $rsvp-grey;
+
+	// Triangular Flap
+	&::before {
+		content: '';
+		position: absolute;
+		top: -160px;
+		display: block;
+		width: 0; 
+		height: 0;
+		border-style: solid;
+		border-width: 0 (($width + 10px) / 2) 160px (($width + 10px) / 2);
+		border-color: transparent transparent $envelope-inside-color transparent;
+		transition: transform 500ms ease-out, z-index 0ms linear;
+		transition-delay: 1000ms;
+		transform-origin-y: bottom;
+		-webkit-transform-origin-y: bottom;
+		z-index: 0;
+	}
+
+	&.sending {
+		transform: translateX(2000px);
+
+		&::before {
+			transform: rotateX(-180deg);
+			z-index: 3;
+		}
+	}
+}
+
+.rsvp-form__front {
+	border-radius: 2px 2px 3px 3px;
+	box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	height: $height;
+	position: relative;
+	width: $width + 10px;
+	z-index: 1;
+	border-style: solid;
+	border-width: 140px (($width + 20px) / 2) ($height / 2) (($width + 20px) / 2);
+	border-color: transparent $envelope-color $envelope-color $envelope-color;
+
+
+	&:active, &:focus {
+		outline: none;
+	}
+}
+
+.rsvp-form__card {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;  
+	background-color: $white;
+	border-radius: 3px;
+	box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
+	height: $height;
+	margin-left: 5px;
+	position: absolute;
+	top: -60px;
+	width: $width;
+	-webkit-animation: card-stuff 1s 1;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: rotate( $begin);
+}
+
+.rsvp-form__envelope.card-out > .rsvp-form__card {
+	box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
+	-webkit-animation: card-pull 1s 1;
+	-webkit-transform: rotate( $end);
+	z-index: 2;
+}
+
+.rsvp-form__envelope.card-in > .rsvp-form__card {
+	box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
+	z-index: 0;
+}
+
+.rsvp-form__envelope.sending > .rsvp-form__card {
+	-webkit-animation: card-in 1s 1;
+	-webkit-transform: rotate( $begin);
+	top: 0;
+	z-index: 0;
+}
+
+@-webkit-keyframes card-pull {
+	0% {
+		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
+		top: -60px;
+		-webkit-transform: rotate( $begin);
+		z-index: 0;
+	}
+	50% {
+		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
+		top: -$height - 30px;
+		-webkit-transform: rotate( $middle);
+		z-index: 0;
+	}
+	100% {
+		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
+		top: -60px;
+		-webkit-transform: rotate( $end);
+		z-index: 2;
+	}
+}
+
+@-webkit-keyframes card-in {
+	0% {
+		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
+		top: -60px;
+		-webkit-transform: rotate( $end);
+		z-index: 2;
+	}
+	50% {
+		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
+		top: -$height - 30px;
+		-webkit-transform: rotate( $middle);
+		z-index: 2;
+	}
+	55% {
+		z-index: 0;
+	}
+	100% {
+		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
+		top: 0;
+		-webkit-transform: rotate( $begin);
+		z-index: 0;
+	}
+}
+
+@-webkit-keyframes card-stuff {
+	0% {
+		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
+		top: -60px;
+		-webkit-transform: rotate( $end);
+		z-index: 2;
+	}
+	50% {
+		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
+		top: -$height - 30px;
+		-webkit-transform: rotateZ( $middle);
+		z-index: 0;
+	}
+	100% {
+		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
+		top: -60px;
+		-webkit-transform: rotate( $begin);
+		z-index: 0;
+	}
+}
+
+
+.rsvp-form__card {
+	line-height: 36px;
+}
+
+.rsvp-form__stamp {
+	color: hsl( 50, 30%, 20%);
+	font-family: 'ritzynormalregular';
+	font-size: 36px;
+	text-align: center;
+	position: absolute;
+	width: $width;
+	left: 50%;
+	top: 50px;
+	transform: translate(-50%, -50%);
+}
+
+.rsvp-form__form {
+	user-select: auto;
+	margin: 10px auto;
+	max-width: $width - 140px;
+
+	input[type="text"],
+	input[type="email"] {
+		display: block;
+		outline: none;
+		border: none;
+		background: $white;
+		border-bottom: 1px solid $rsvp-grey;
+		font-family: Satisfy, cursive;
+		width: 100%;
+		height: 32px;
+		font-weight: 200;
+		text-indent: 10px;
+		font-size: $font-size-inputs;
+		color: black;
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover, 
+		&:-webkit-autofill:focus, 
+		&:-webkit-autofill:active  {
+		    -webkit-box-shadow: 0 0 0 30px $white inset !important;
+		}
+	}
+
+	.rsvp-form__attending_guests {
+		margin-top: 20px;
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	.rsvp-form__guest-count {
+		padding-right: 12px;
+	}
+
+	.rsvp-form__guest-count-container {
+		text-align: right;
+
+		span {
+			color: $placeholder-color;
+		}
+	}
+
+	label {
+		font-family: 'baskerville_small_casmallcaps';
+		font-weight: 100;
+		text-transform: uppercase;
+		font-size: $font-size;
+		letter-spacing: 0.1em;
+		display: block;
+		float: left;
+		padding-left: 15px;
+		text-indent: -15px;
+	}
+
+	select {
+		outline: none;
+		padding: 5px 0;
+		appearance: none;
+		background-color: transparent;
+		border: none;
+		color: black;
+		font-size: $font-size;
+
+		option {
+			color: black;
+			font-size: $font-size;
+		}
+	}
+
+	.submit {
+		position: absolute;
+		bottom: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+		cursor: pointer;
+		text-align: center;
+		letter-spacing: 5px;
+		color: $rsvp-grey;
+		border: 3px solid $rsvp-grey;
+		border-radius: 10px;
+		background-color: transparent;
+		display: block;
+		opacity: 1;
+		transition: opacity 300ms;
+		max-width: 200px;
+		padding: 4px 8px;
+
+		&:disabled {
+			opacity: 0.1;
+			border-color: $rsvp-grey;
+			cursor: not-allowed;
+
+			&:hover {
+				text-transform: none;
+			}
+		}
+	}
+}

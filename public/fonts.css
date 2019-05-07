@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'ritzynormalregular';
+    src: url('ritzynormal-webfont.woff2') format('woff2'),
+         url('ritzynormal-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'wedding_scriptregular';
+    src: url('wedding-webfont.woff2') format('woff2'),
+         url('wedding-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'baskerville_small_casmallcaps';
+    src: url('baskerville-webfont.woff2') format('woff2'),
+         url('baskerville-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'breamcatcherregular';
+    src: url('breamcatcher-webfont.woff2') format('woff2'),
+         url('breamcatcher-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
