@@ -110,7 +110,7 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		border-color: transparent transparent $envelope-inside-color transparent;
 		transition: transform 500ms ease-out, z-index 0ms linear;
 		transition-delay: 1000ms;
-		transform-origin-y: bottom;
+		transform-origin: bottom;
 		-webkit-transform-origin-y: bottom;
 		z-index: 0;
 	}

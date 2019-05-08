@@ -30,6 +30,7 @@
 	}
 
 	@include breakpoint(mobile) {
-		width: $mobileCardWidth;
+		width: 100%;
+		margin: 10px;
 	}
 }
