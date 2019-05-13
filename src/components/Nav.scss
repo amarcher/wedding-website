@@ -78,14 +78,15 @@
   pointer-events: none;
 }
 
-ul {
+.nav__list {
   padding-inline-start: 0;
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
   display: flex;
   align-items: space-around;
-  flex-wrap: nowrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 button {
