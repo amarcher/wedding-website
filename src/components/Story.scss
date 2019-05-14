@@ -4,17 +4,8 @@
 
 .story {
 	box-sizing: border-box;
-    max-width: 800px;
     border: 16px solid $white;
     background-color: $white;
-
-    @include breakpoint(phablet) {
-    	width: 582px;
-    }
-
-	@include breakpoint(mobile) {
-		width: $mobileCardWidth;
-	}
 }
 
 .story__paragraph {

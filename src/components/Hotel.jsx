@@ -41,7 +41,7 @@ class Hotel extends Component {
         >
           <Carousel className="hotel__image" images={images} />
           <div className="hotel__content">
-            <PreloadedImage alt={name} src={logo} className="hotel__logo" />
+            <PreloadedImage alt={name} src={logo} className="hotel__logo" imageClassName="hotel__logo-image" />
             <div className="hotel__description">
               {description}
               {instructions}

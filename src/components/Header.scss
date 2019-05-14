@@ -1,12 +1,13 @@
 @import '../_colors.scss';
+@import '../_breakpoints.scss';
 
 .header {
     top: 0;
     left: 0;
     right: 0;
-	line-height: 48px;
-    font-family: 'Satisfy', cursive;
-    font-size: 36px;
+	line-height: 60px;
+    font-family: 'wedding_scriptregular', 'Satisfy', cursive;
+    font-size: 48px;
 	width: 100%;
 	z-index: 1;
     text-align: center;
@@ -17,7 +18,44 @@
 
 .header__date {
     font-size: 18px;
-    font-family: sans-serif;
-    line-height: 18px;
+    font-family: 'baskerville_small_casmallcaps', sans-serif;
+    line-height: 28px;
     padding-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__month,
+.header__year {
+    flex: 1 1 0;
+
+    @include breakpoint(mobile) {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+    }
+}
+
+.header__month {
+    text-align: right;
+    margin-right: 12px;
+
+    @include breakpoint(mobile) {
+        margin-right: 6px;
+    }
+}
+
+.header__year {
+    text-align: left;
+    margin-left: 12px;
+
+    @include breakpoint(mobile) {
+        margin-left: 6px;
+    }
+}
+
+.header__day {
+    font-size: 28px;
+    font-family: 'ritzynormalregular';
+    flex: 0 0 auto;
 }

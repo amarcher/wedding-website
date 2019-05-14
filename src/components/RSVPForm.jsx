@@ -124,7 +124,7 @@ class RSVPForm extends Component {
 
           <div className="rsvp-form__card" style={{ backgroundImage: `url(${Frame})` }}>
             <h2 className="rsvp-form__card-title">RSVP</h2>
-            <h3 className="rsvp-form__card-subtitle">Kindly Respond by August 31, 2019</h3>
+            <h3 className="rsvp-form__card-subtitle">Kindly Respond by August&#8239;31,&#8239;2019</h3>
 
             <form className="rsvp-form__form" onSubmit={this.onSubmit}>
               <input id="name" name="name" type="text" placeholder="Your Name" value={name} onChange={this.onChange} />
@@ -172,13 +172,11 @@ class RSVPForm extends Component {
   }
 
   renderSuccess() {
-    const { name: fullName, attendingWedding } = this.state;
-
-    const name = fullName.split(' ')[0];
+    const { attendingWedding } = this.state;
 
     return (
       <div className="rsvp-form__success">
-        <h1>{attendingWedding ? `${name}, we can’t wait to see you!` : `${name}, we are sorry we’ll miss you`}</h1>
+        <h1>{attendingWedding ? 'We can’t wait to see you!' : 'We are sorry we’ll miss you'}</h1>
       </div>
     );
   }

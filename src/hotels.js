@@ -1,4 +1,6 @@
 import HolidayInn from './photos/HolidayInn.png';
+import VanderbiltGrace from './photos/Vanderbiltgrace.png';
+import Gurneys from './photos/Gurneys_Newport_Primary_Green.png';
 
 const holidayInnImages = [
   'https://ihg.scene7.com/is/image/ihg/holiday-inn-express-middletown-5585325070-2x1?wid=940&hei=470',
@@ -34,7 +36,7 @@ const homewoodSuites = {
 
 const vanderbilt = {
   link: 'https://aubergeresorts.com/vanderbilt/',
-  logo: 'https://www.spaindex.com/wp-content/uploads/spaindex_vanderbilt-grace-hotel-spa.jpg',
+  logo: VanderbiltGrace,
   name: 'Vanderbilt',
   images: vanderbiltImages,
   instructions: 'Call 401-846-6200. Ask for Yang/Archer group rate.',
@@ -42,7 +44,7 @@ const vanderbilt = {
 
 const gurneys = {
   link: 'https://www.gurneysresorts.com/newport',
-  logo: 'http://www.ldvhospitality.com/wp-content/uploads/2017/05/Gurneys_Newport_Primary_Green.png',
+  logo: Gurneys,
   name: 'Gurney’s',
   images: gurneysImages,
   rate: '$219/night + $25 resort fee.',
