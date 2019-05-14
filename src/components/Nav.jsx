@@ -9,7 +9,7 @@ class Nav extends Component {
     return (
       <div className="nav">
         <nav className="nav__content">
-          <ul>
+          <ul className="nav__list">
             <li className="nav__list-item"><NavLink to="/" exact>Our Story</NavLink></li>
             <li className="nav__list-item"><NavLink to="/event-details">Event Details</NavLink></li>
             <li className="nav__list-item"><NavLink to="/wedding-party">Wedding Party</NavLink></li>

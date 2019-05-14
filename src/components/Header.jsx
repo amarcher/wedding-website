@@ -8,7 +8,11 @@ class Header extends Component {
     return (
       <header className="header">
         <div>Andy & Alicia</div>
-        <div className="header__date">November 2, 2019</div>
+        <div className="header__date">
+          <span className="header__month">November </span>
+          <span className="header__day">2</span>
+          <span className="header__year"> 2019</span>
+        </div>
       </header>
     );
   }
