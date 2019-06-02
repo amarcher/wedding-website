@@ -73,8 +73,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "jest-resolve": "^24.8.0",
-    "webpack-bundle-analyzer": "^3.3.2"
+    "jest-resolve": "^24.8.0"
   },
   "jest": {
     "collectCoverageFrom": [
