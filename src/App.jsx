@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Nav from './components/Nav';
+import Registry from './pages/Registry';
 import Rsvp from './pages/Rsvp';
 import OurStory from './pages/OurStory';
 import EventDetails from './pages/EventDetails';
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/event-details" component={EventDetails} />
             <Route path="/wedding-party" component={WeddingParty} />
             <Route path="/accommodations" component={Accommodations} />
+            <Route path="/registry" component={Registry} />
             <Route path="/rsvp" component={Rsvp} />
           </main>
         </div>
