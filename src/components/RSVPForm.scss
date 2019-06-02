@@ -1,4 +1,5 @@
 @import '../_colors.scss';
+@import '../_breakpoints.scss';
 
 $placeholder-color: $grey;
 
@@ -12,10 +13,17 @@ $width: 600px;
 $height: 430px;
 
 $font-size: 20px;
-$font-size-inputs: 32px;
+$font-size-inputs: 28px;
+
+$small-width: 320px;
+$small-height: 380px;
+$small-font-size: 16px;
+$small-font-size-inputs: 22px;
 
 $envelope-color: hsl( 50, 50%, 87%);
 $envelope-inside-color: hsl( 50, 50%, 84%);
+
+$base-z-index: 11;
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	font-family: 'baskerville_small_casmallcaps';
@@ -25,6 +33,10 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	letter-spacing: 0.1em;
 	color: $placeholder-color;
 	opacity: 1; /* Firefox */
+
+	@include breakpoint(phablet) {
+		font-size: $small-font-size;
+	}
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -34,6 +46,10 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	font-size: $font-size;
 	letter-spacing: 0.1em;
 	color: $placeholder-color;
+
+	@include breakpoint(phablet) {
+		font-size: $small-font-size;
+	}
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -43,6 +59,10 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	font-size: $font-size;
 	letter-spacing: 0.1em;
 	color: $placeholder-color;
+
+	@include breakpoint(phablet) {
+		font-size: $small-font-size;
+	}
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
@@ -52,6 +72,10 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	font-size: $font-size;
 	letter-spacing: 0.1em;
 	color: $placeholder-color;
+
+	@include breakpoint(phablet) {
+		font-size: $small-font-size;
+	}
 }
 
 .rsvp-form {
@@ -63,6 +87,12 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	margin-top: -30px;
 	margin-left: -15px;
 	-webkit-font-smoothing: antialiased;
+	position: relative;
+	z-index: $base-z-index;
+
+	@include breakpoint(phablet) {
+		font-size: $small-font-size;
+	}
 }
 
 .rsvp-form__card-title {
@@ -74,6 +104,10 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	text-transform: uppercase;
 	font-size: 68px;
 	margin-bottom: 0;
+
+	@include breakpoint(phablet) {
+		font-size: 48px;
+	}
 }
 
 .rsvp-form__card-subtitle {
@@ -110,9 +144,9 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		border-color: transparent transparent $envelope-inside-color transparent;
 		transition: transform 500ms ease-out, z-index 0ms linear;
 		transition-delay: 1000ms;
-		transform-origin-y: bottom;
+		transform-origin: bottom;
 		-webkit-transform-origin-y: bottom;
-		z-index: 0;
+		z-index: $base-z-index;
 	}
 
 	&.sending {
@@ -120,7 +154,16 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 
 		&::before {
 			transform: rotateX(-180deg);
-			z-index: 3;
+			z-index: $base-z-index + 2;
+		}
+	}
+
+	@include breakpoint(phablet) {
+		width: $small-width + 10px;
+		height: $small-height;
+
+		&::before {
+			border-width: 0 (($small-width + 10px) / 2) 160px (($small-width + 10px) / 2);
 		}
 	}
 }
@@ -132,7 +175,7 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	height: $height;
 	position: relative;
 	width: $width + 10px;
-	z-index: 1;
+	z-index: $base-z-index + 1;
 	border-style: solid;
 	border-width: 140px (($width + 20px) / 2) ($height / 2) (($width + 20px) / 2);
 	border-color: transparent $envelope-color $envelope-color $envelope-color;
@@ -140,6 +183,12 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 
 	&:active, &:focus {
 		outline: none;
+	}
+
+	@include breakpoint(phablet) {
+		width: $small-width + 10px;
+		height: $small-height;
+		border-width: 140px (($small-width + 20px) / 2) ($small-height / 2) (($small-width + 20px) / 2);
 	}
 }
 
@@ -158,25 +207,33 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	-webkit-animation: card-stuff 1s 1;
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: rotate( $begin);
+	line-height: $font-size-inputs + 4px;
+
+	@include breakpoint(phablet) {
+		width: $small-width;
+		height: $small-height;
+		background-size: cover;
+		line-height: $small-font-size-inputs + 4px;
+	}
 }
 
 .rsvp-form__envelope.card-out > .rsvp-form__card {
 	box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 	-webkit-animation: card-pull 1s 1;
 	-webkit-transform: rotate( $end);
-	z-index: 2;
+	z-index: $base-z-index + 2;
 }
 
 .rsvp-form__envelope.card-in > .rsvp-form__card {
 	box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
-	z-index: 0;
+	z-index: $base-z-index;
 }
 
 .rsvp-form__envelope.sending > .rsvp-form__card {
 	-webkit-animation: card-in 1s 1;
 	-webkit-transform: rotate( $begin);
 	top: 0;
-	z-index: 0;
+	z-index: $base-z-index;
 }
 
 @-webkit-keyframes card-pull {
@@ -184,19 +241,19 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
 		-webkit-transform: rotate( $begin);
-		z-index: 0;
+		z-index: $base-z-index;
 	}
 	50% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: -$height - 30px;
 		-webkit-transform: rotate( $middle);
-		z-index: 0;
+		z-index: $base-z-index;
 	}
 	100% {
 		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
 		-webkit-transform: rotate( $end);
-		z-index: 2;
+		z-index: $base-z-index + 2;
 	}
 }
 
@@ -205,22 +262,22 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
 		-webkit-transform: rotate( $end);
-		z-index: 2;
+		z-index: $base-z-index + 2;
 	}
 	50% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: -$height - 30px;
 		-webkit-transform: rotate( $middle);
-		z-index: 2;
+		z-index: $base-z-index + 2;
 	}
 	55% {
-		z-index: 0;
+		z-index: $base-z-index;
 	}
 	100% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: 0;
 		-webkit-transform: rotate( $begin);
-		z-index: 0;
+		z-index: $base-z-index;
 	}
 }
 
@@ -229,25 +286,20 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
 		-webkit-transform: rotate( $end);
-		z-index: 2;
+		z-index: $base-z-index + 2;
 	}
 	50% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: -$height - 30px;
 		-webkit-transform: rotateZ( $middle);
-		z-index: 0;
+		z-index: $base-z-index;
 	}
 	100% {
 		box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5);
 		top: -60px;
 		-webkit-transform: rotate( $begin);
-		z-index: 0;
+		z-index: $base-z-index;
 	}
-}
-
-
-.rsvp-form__card {
-	line-height: 36px;
 }
 
 .rsvp-form__stamp {
@@ -260,12 +312,21 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 	left: 50%;
 	top: 50px;
 	transform: translate(-50%, -50%);
+
+	@include breakpoint(phablet) {
+		width: $small-width;
+		font-size: $small-font-size-inputs;
+	}
 }
 
 .rsvp-form__form {
 	user-select: auto;
 	margin: 10px auto;
 	max-width: $width - 140px;
+
+	@include breakpoint(phablet) {
+		max-width: $small-width - 20px;
+	}
 
 	input[type="text"],
 	input[type="email"] {
@@ -276,7 +337,7 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		border-bottom: 1px solid $rsvp-grey;
 		font-family: Satisfy, cursive;
 		width: 100%;
-		height: 32px;
+		height: $font-size-inputs;
 		font-weight: 200;
 		text-indent: 10px;
 		font-size: $font-size-inputs;
@@ -287,6 +348,11 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		&:-webkit-autofill:focus, 
 		&:-webkit-autofill:active  {
 		    -webkit-box-shadow: 0 0 0 30px $white inset !important;
+		}
+
+		@include breakpoint(phablet) {
+			font-size: $small-font-size-inputs;
+			height: $small-font-size-inputs;
 		}
 	}
 
@@ -299,6 +365,10 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 
 	.rsvp-form__guest-count {
 		padding-right: 12px;
+
+		@include breakpoint(phablet) {
+			padding-right: 4px;
+		}
 	}
 
 	.rsvp-form__guest-count-container {
@@ -319,6 +389,13 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		float: left;
 		padding-left: 15px;
 		text-indent: -15px;
+
+		@include breakpoint(phablet) {
+			font-size: $small-font-size;
+			letter-spacing: initial;
+			padding-left: 4px;
+			text-indent: -4px;
+		}
 	}
 
 	select {
@@ -333,6 +410,14 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 		option {
 			color: black;
 			font-size: $font-size;
+		}
+
+		@include breakpoint(phablet) {
+			font-size: $small-font-size;
+
+			option {
+				font-size: $small-font-size;
+			}
 		}
 	}
 
@@ -363,5 +448,14 @@ $envelope-inside-color: hsl( 50, 50%, 84%);
 				text-transform: none;
 			}
 		}
+
+		@include breakpoint(phablet) {
+			max-width: 160px;
+		}
 	}
+}
+
+.rsvp-form__success,
+.rsvp-form__failure {
+	font-family: 'baskerville_small_casmallcaps', Laila, serif; 
 }
