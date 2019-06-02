@@ -11,7 +11,10 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   location: PropTypes.string.isRequired,
+  locationLink: PropTypes.string.isRequired,
   attire: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  addressLink: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -24,6 +27,9 @@ function EventCard({
   title,
   subtitle,
   location,
+  locationLink,
+  address,
+  addressLink,
   attire,
 }) {
   return (
@@ -39,8 +45,11 @@ function EventCard({
         <div className="event-cart__time_location_and_attire">
           <p className="event-card__time">{time}</p>
           <p className="event-card__location">
+            <a href={locationLink} target="_blank" rel="noreferrer noopener">{location}</a>
+          </p>
+          <p className="event-card__location">
             <LocationPin className="event-card__location_pin" />
-            {location}
+            <a href={addressLink} target="_blank" rel="noreferrer noopener">{address}</a>
           </p>
           <p className="event-card__attire_section">
             <span className="event-card__attire">

@@ -336,7 +336,7 @@ $base-z-index: 11;
 		background: $white;
 		border-bottom: 1px solid $rsvp-grey;
 		font-family: Satisfy, cursive;
-		width: 100%;
+		width: calc(100% - 10px);
 		height: $font-size-inputs;
 		font-weight: 200;
 		text-indent: 10px;
