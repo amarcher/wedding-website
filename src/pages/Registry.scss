@@ -1,0 +1,44 @@
+@import '../_colors.scss';
+@import '../_breakpoints.scss';
+
+.registry__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 80%;
+	margin: 0 auto;
+
+	@include breakpoint(phablet) {
+        display: block;
+    }
+}
+
+.registry__image {
+	flex: 0 0 50%;
+	min-height: 380px;
+	min-width: 260px;
+}
+
+.registry__image-inside {
+	border-radius: 10px;
+}
+
+.registry__detail {
+	flex: 0 0 50%;
+	padding: 40px;
+}
+
+.registry__info {
+	font-family: 'baskerville_small_casmallcaps';
+	font-size: 20px;
+}
+
+.registry__link {
+	display: inline-block;
+	font-family: 'baskerville_small_casmallcaps';
+	font-size: 28px;
+	padding: 20px;
+	background: $peach;
+	border-radius: 10px;
+	margin: 20px auto;
+}

@@ -2,7 +2,9 @@ import React from 'react';
 
 import ProfileCard from '../components/ProfileCard';
 import PreloadedImage from '../components/PreloadedImage';
+import BackgroundImage from '../components/BackgroundImage';
 
+import GoldenGateBridge from '../photos/GoldenGateBridge.jpg';
 import TinderIcon from '../photos/TinderIcon.png';
 import { bridesmaids, groomsmen } from '../content';
 
@@ -27,6 +29,7 @@ function WeddingParty() {
 
   return (
     <div className="wedding-party">
+      <BackgroundImage src={GoldenGateBridge} className="wedding-party__background" />
       <h1 className="wedding-party__title">
         {tinderIcon}
         Bridesmaids

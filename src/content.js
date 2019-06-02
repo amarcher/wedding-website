@@ -140,19 +140,32 @@ export const ourStory = [
   'Alicia decides to stay.',
 ];
 
+export const registryInfo = [
+  'We are fortunate to have most of what we need in our home, so instead we’ve decided to use our registry for a honeymoon.',
+  'In April we are planning a trip to the Amalfi Coast in Italy!',
+  'If you would like to help make our trip more memorable with a contribution, we would be so grateful.',
+];
+
 const friday = {
   date: 'Friday, November 1, 2019',
   time: '8pm EDT',
-  location: 'TBD',
-  attire: 'Cocktail',
+  location: 'Surf Club',
+  locationLink: 'https://www.surfclubnewport.com/',
+  address: '337 Thames St, Newport, RI 02840',
+  addressLink: 'https://goo.gl/maps/R86qUNdBifWTEiQE9',
+  attire: 'Casual',
   title: 'Welcome Drinks',
+  subtitle: 'Arriving Friday night? Come have a drink with us!',
 };
 
 const saturday = {
   date: 'Saturday, November 2, 2019',
   time: '4pm EDT',
   location: 'Island House at Belle Mer',
-  attire: 'Formal',
+  locationLink: 'https://longwoodvenues.com/gallery/belle-mer-island-house-7/',
+  address: '2 Goat Island, Newport, RI 02840',
+  addressLink: 'https://goo.gl/maps/R86qUNdBifWTEiQE9',
+  attire: 'Black Tie Optional',
   title: 'Ceremony',
   subtitle: 'Cocktail Hour & Reception Immediately Following',
 };
