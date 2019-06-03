@@ -45,7 +45,7 @@ const mai = {
 
 const julie = {
   name: 'Julie Xu',
-  distance: '2925 miles away',
+  distance: '2 miles away',
   relation: 'College roommate, and the one who made me like dogs',
   then: 'Spending almost all Thanksgiving weekends together and sleeping in until mid-afternoon',
   now: 'COO at Stae',
