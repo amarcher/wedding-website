@@ -353,6 +353,7 @@ $base-z-index: 11;
 		@include breakpoint(phablet) {
 			font-size: $small-font-size-inputs;
 			height: $small-font-size-inputs;
+			width: calc(100% - 20px);
 		}
 	}
 

@@ -1,11 +1,12 @@
 @import '../_colors.scss';
 @import '../_constants.scss';
+@import '../_breakpoints.scss';
 
 .event-card {
     position: relative;
-    flex: 0 0 0;
+    flex: 0 1 500px;
     min-width: $mobileCardWidth;
-    max-width: 480px;
+    max-width: 500px;
     background-color: white;
     user-select: none;
     box-shadow: 4px 4px 8px $grey;
