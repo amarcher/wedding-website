@@ -24,6 +24,7 @@ const holidayInn = {
   name: 'Holiday Inn',
   images: holidayInnImages,
   instructions: 'Call 401-848-7128. Ask for Yang/Archer group rate.',
+  nightlyPrice: '$119/night',
 };
 
 const homewoodSuites = {
@@ -32,6 +33,17 @@ const homewoodSuites = {
   name: 'Homewood Suites',
   images: homewoodSuitesImages,
   instructions: 'Call 401-848-2700 and mention group code "YAW".',
+  nightlyPrice: '$139/night',
+};
+
+
+const gurneys = {
+  link: 'https://www.gurneysresorts.com/newport',
+  logo: Gurneys,
+  name: 'Gurney’s',
+  images: gurneysImages,
+  instructions: 'Call 401-851-3332. Ask for Yang/Archer group rate.',
+  nightlyPrice: '$219/night + $25 resort fee',
 };
 
 const vanderbilt = {
@@ -40,16 +52,7 @@ const vanderbilt = {
   name: 'Vanderbilt',
   images: vanderbiltImages,
   instructions: 'Call 401-846-6200. Ask for Yang/Archer group rate.',
-};
-
-const gurneys = {
-  link: 'https://www.gurneysresorts.com/newport',
-  logo: Gurneys,
-  name: 'Gurney’s',
-  images: gurneysImages,
-  rate: '$219/night + $25 resort fee.',
-  instructions: 'Call 401-851-3332. Ask for Yang/Archer group rate.',
-  terms: 'Two-Night Stay: Friday & Saturday. Standard King or Double/Double.',
+  nightlyPrice: '$199/night + $50 resort fee',
 };
 
 export const hotelInfo = 'For your convenience, blocks of rooms at special rates have been reserved at several hotels near the wedding venue.';
@@ -69,6 +72,6 @@ export const trainInfo = [
 export default [
   holidayInn,
   homewoodSuites,
-  vanderbilt,
   gurneys,
+  vanderbilt,
 ];

@@ -76,6 +76,7 @@ class PreloadedFrame extends Component {
         frameBorder="0"
         title={title}
         src={src}
+        seamless
       />
     );
   }

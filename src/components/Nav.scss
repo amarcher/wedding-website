@@ -20,8 +20,17 @@
   list-style-type: none;
   white-space: nowrap;
   font-family: 'baskerville_small_casmallcaps', 'Laila', serif;
-  font-size: 18px;
+  font-size: 24px;
   color: $darkBlue;
+  user-select: none;
+
+  @include breakpoint(tablet) {
+    font-size: 18px;
+  }
+
+  @include breakpoint(phablet) {
+    font-size: 15px;
+  }
 
   @include breakpoint(mobile) {
     font-size: 13px;

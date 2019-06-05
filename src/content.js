@@ -148,7 +148,7 @@ export const registryInfo = [
 
 const friday = {
   date: 'Friday, November 1, 2019',
-  time: '8pm EDT',
+  time: '8pm-10pm EDT',
   location: 'Surf Club',
   locationLink: 'https://www.surfclubnewport.com/',
   address: '337 Thames St, Newport, RI 02840',

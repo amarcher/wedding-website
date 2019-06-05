@@ -7,24 +7,24 @@ import Carousel from './Carousel';
 import './Hotel.scss';
 
 const propTypes = {
-  description: PropTypes.string,
   link: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
   instructions: PropTypes.string,
+  nightlyPrice: PropTypes.string,
 };
 
 const defaultProps = {
-  description: '',
   instructions: '',
+  nightlyPrice: '',
 };
 
 /* eslint-disable-next-line react/prefer-stateless-function */
 class Hotel extends Component {
   render() {
     const {
-      description,
+      nightlyPrice,
       images,
       instructions,
       link,
@@ -43,8 +43,10 @@ class Hotel extends Component {
           <div className="hotel__content">
             <PreloadedImage alt={name} src={logo} className="hotel__logo" imageClassName="hotel__logo-image" />
             <div className="hotel__description">
-              {description}
               {instructions}
+            </div>
+            <div className="hotel__description">
+              {nightlyPrice}
             </div>
           </div>
         </a>
