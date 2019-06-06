@@ -4,7 +4,7 @@ import Joy from './photos/Joy3.jpg';
 import Joy2 from './photos/Joy2.jpg';
 import Minna from './photos/Minna1.jpg';
 import Minna2 from './photos/Minna2.jpg';
-import Kerry from './photos/Kerry.jpg';
+import Kerry from './photos/KerryNew.jpeg';
 import Kerry2 from './photos/Kerry2.jpg';
 import Mai from './photos/Mai1.jpg';
 import Mai2 from './photos/Mai2.jpg';
