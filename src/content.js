@@ -48,7 +48,7 @@ const julie = {
   distance: '2 miles away',
   relation: 'College roommate, and the one who made me like dogs',
   then: 'Spending almost all Thanksgiving weekends together and sleeping in until mid-afternoon',
-  now: 'COO at Stae',
+  now: 'Finance & Strategy at Square',
   images: [Julie, Julie2],
 };
 
