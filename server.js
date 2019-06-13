@@ -2,13 +2,13 @@ const express = require('express');
 const favicon = require('express-favicon');
 const path = require('path');
 const bodyParser = require('body-parser');
+const { redirectToHTTPS } = require('express-http-to-https');
 const sendEmail = require('./emailer');
-const secureRedirect = require('./redirectToHttps');
 
 const port = process.env.PORT || 8080;
 const app = express();
 
-app.use(secureRedirect);
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
