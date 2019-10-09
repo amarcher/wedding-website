@@ -10,6 +10,9 @@
     box-shadow: 4px 4px 8px $grey;
     margin: 16px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @include breakpoint(phablet) {
         margin-left: auto;
@@ -25,15 +28,33 @@
 
 .profile-card__name_and_distance {
     border-bottom: 1px solid $grey;
+    flex: 0 0 auto;
 }
 
 .profile-card__content {
     padding: 0;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .profile-card__name_and_distance,
 .profile-card__description {
     padding: 0 10px;
+}
+
+.profile-card__description {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-card__then-and-now {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .profile-card__name,
