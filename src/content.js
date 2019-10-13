@@ -23,6 +23,8 @@ import Dave2 from './photos/Dave2.jpg';
 import Al from './photos/Al.jpg';
 import Al2 from './photos/Al2.jpeg';
 import Al3 from './photos/Al3.jpg';
+import Clint from './photos/Clint1.jpg';
+import Clint2 from './photos/Clint2.jpg';
 
 const kerry = {
   name: 'Kerry Yang',
@@ -100,7 +102,7 @@ const michael = {
 const dave = {
   name: 'Dave Lee',
   distance: '3 miles away',
-  relation: 'College friend, and the one who’s down to go to Vegas tomorrow',
+  relation: 'College friend, and the one who’s down for a trip to Vegas tomorrow',
   then: 'Coding-bootcamp trailblazer',
   now: 'Director of Product Engineering, BuildZoom',
   images: [Dave, Dave2],
@@ -113,6 +115,15 @@ const al = {
   then: 'And1™ Mixtape film subject',
   now: 'Gastroenterologist, Texas Digestive Disease Consultants',
   images: [Al, Al2, Al3],
+};
+
+const clint = {
+  name: 'Clint Mullins',
+  distance: '4 miles away',
+  relation: 'Wealthfront coworker, and the one who ought to be doing standup comedy',
+  then: 'Work mentor',
+  now: 'Software Engineer, Twitch',
+  images: [Clint, Clint2],
 };
 
 export const bridesmaids = [
@@ -129,6 +140,7 @@ export const groomsmen = [
   michael,
   dave,
   al,
+  clint,
 ];
 
 export const ourStory = [
