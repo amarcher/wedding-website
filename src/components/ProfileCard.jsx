@@ -42,14 +42,16 @@ function ProfileCard({
         </div>
         <div className="profile-card__description">
           <p className="profile-card__relation">{relation}</p>
-          <p className="profile-card__then">
-            <span className="profile-card__prompt">Previously: </span>
-            {then}
-          </p>
-          <p className="profile-card__now">
-            <span className="profile-card__prompt">Now: </span>
-            {now}
-          </p>
+          <div className="profile-card__then-and-now">
+            <p className="profile-card__then">
+              <span className="profile-card__prompt">Previously: </span>
+              {then}
+            </p>
+            <p className="profile-card__now">
+              <span className="profile-card__prompt">Now: </span>
+              {now}
+            </p>
+          </div>
         </div>
       </div>
     </div>
