@@ -153,9 +153,10 @@ export const ourStory = [
 ];
 
 export const registryInfo = [
-  'We are fortunate to have most of what we need in our home, so instead we’ve decided to use our registry for a honeymoon.',
-  'In April we are planning a trip to the Amalfi Coast in Italy!',
+  'We are fortunate to have most of what we need in our home, and space in our apartment in San Francisco is limited.',
+  'So instead of a traditional registry, we have a fund for our honeymoon. In April, we are planning a trip to the Amalfi Coast in Italy!',
   'If you would like to help make our trip more memorable with a contribution, we would be so grateful.',
+  'If you would prefer to use a check (payable to Alicia Yang), we will have a welcome table at the wedding where gifts will be received.',
 ];
 
 const friday = {

@@ -9,8 +9,8 @@
 	margin: 0 auto;
 
 	@include breakpoint(phablet) {
-        display: block;
-    }
+    display: block;
+  }
 }
 
 .registry__image {
@@ -31,6 +31,7 @@
 .registry__info {
 	font-family: 'baskerville_small_casmallcaps';
 	font-size: 20px;
+	margin-bottom: 8px;
 }
 
 .registry__link {
