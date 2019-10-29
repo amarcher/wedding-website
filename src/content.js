@@ -161,7 +161,7 @@ export const registryInfo = [
 
 const friday = {
   date: 'Friday, November 1, 2019',
-  time: '8pm-10pm EDT',
+  time: '8pm-11pm EDT',
   location: 'Surf Club',
   locationLink: 'https://www.surfclubnewport.com/',
   address: '337 Thames St, Newport, RI 02840',
@@ -169,11 +169,12 @@ const friday = {
   attire: 'Casual',
   title: 'Welcome Drinks',
   subtitle: 'Arriving Friday night? Come have a drink with us!',
+  details: 'Cash bar. Charcuterie and a few pizzas will be provided.',
 };
 
 const saturday = {
   date: 'Saturday, November 2, 2019',
-  time: '4pm EDT',
+  time: '4:15pm-11pm EDT',
   location: 'Island House at Belle Mer',
   locationLink: 'https://longwoodvenues.com/gallery/belle-mer-island-house-7/',
   address: '2 Goat Island, Newport, RI 02840',
@@ -181,6 +182,7 @@ const saturday = {
   attire: 'Black Tie Optional',
   title: 'Ceremony',
   subtitle: 'Cocktail Hour & Reception Immediately Following',
+  details: 'Late night drinks to follow at Gurney’s.',
 };
 
 export const events = [

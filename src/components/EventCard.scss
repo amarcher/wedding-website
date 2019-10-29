@@ -19,6 +19,9 @@
         margin: 4px 0;
     }
 
+    .event-card__subtitle {
+        margin-bottom: 16px;
+    }
 }
 
 .event-card:before {
@@ -52,7 +55,7 @@
     height: 100%;
 }
 
-.event-card__title_and_subitle {
+.event-card__title_and_subtitle {
     flex: 0 0 auto;
     margin-bottom: 24px;
 }
@@ -65,9 +68,6 @@
 .event-card__title,
 .event-card__attire {
     font-weight: bold;
-}
-
-.event-card__attire_section {
 }
 
 .event-card__time,
