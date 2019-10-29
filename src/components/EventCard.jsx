@@ -7,6 +7,7 @@ import './EventCard.scss';
 
 const propTypes = {
   date: PropTypes.string.isRequired,
+  details: PropTypes.string,
   time: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
@@ -19,10 +20,12 @@ const propTypes = {
 
 const defaultProps = {
   subtitle: '',
+  details: '',
 };
 
 function EventCard({
   date,
+  details,
   time,
   title,
   subtitle,
@@ -38,9 +41,10 @@ function EventCard({
         <p className="event-card__date">{date}</p>
       </div>
       <div className="event-card__title_and_details">
-        <div className="event-card__title_and_subitle">
+        <div className="event-card__title_and_subtitle">
           <p className="event-card__title">{title}</p>
           {subtitle && <p className="event-card__subtitle">{subtitle}</p>}
+          {details && <p className="event-card__details">{details}</p>}
         </div>
         <div className="event-cart__time_location_and_attire">
           <p className="event-card__time">{time}</p>
