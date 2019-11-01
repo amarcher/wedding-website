@@ -79,6 +79,7 @@ const allen = {
   then: 'Smash Bros. teammate; Prolific roller of fives',
   now: 'iOS Developer, AIM Consulting Group',
   images: [Allen, Allen2, Allen3, Allen4],
+  title: 'Best Man',
 };
 
 const russell = {
